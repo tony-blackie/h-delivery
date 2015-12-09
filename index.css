@@ -11,6 +11,24 @@
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d; }
+  .landing__button {
+    margin: 0 auto;
+    width: 186px;
+    height: 50px;
+    text-align: center; }
+  .landing__button-item {
+    display: block;
+    height: 31px;
+    border: 1px solid #333333;
+    border-radius: 3px 3px;
+    text-align: center;
+    margin-top: 33px;
+    font-size: 0.8125rem;
+    line-height: 31px;
+    text-decoration: none;
+    color: #333; }
+    .landing__button-item:hover {
+      background-color: #2ca9c9; }
 
 .header {
   margin: 0 auto;
@@ -73,7 +91,8 @@
     font-family: "PT SANS";
     font-weight: normal;
     font-size: 2.5rem;
-    color: #333333; }
+    color: #000;
+    opacity: 0.7; }
   .title__stripe {
     background: #cbcccd;
     width: 114px;
@@ -94,12 +113,14 @@
     vertical-align: top;
     margin: 0 0 0 11px;
     font-size: 0.875rem;
-    color: #333; }
+    color: #000;
+    opacity: 0.7; }
   .phone__comment {
     margin: 34px 0 0 0;
     font-size: 1.1875rem;
     font-weight: normal;
-    letter-spacing: 0.4px; }
+    letter-spacing: 0.4px;
+    opacity: 0.7; }
 
 .landing-icons {
   text-align: center;
@@ -133,35 +154,24 @@
     vertical-align: middle; }
   .landing-icons__text {
     font-size: 0.8125rem;
-    color: #333333; }
-
-.button {
-  margin: 0 auto;
-  width: 180px;
-  height: 50px;
-  text-align: center; }
-  .button__item {
-    display: block;
-    width: 180px;
-    height: 31px;
-    border: 1px solid #333333;
-    border-radius: 3px 3px;
-    text-align: center;
-    margin: 33px 0 0 4px;
-    font-size: 0.8125rem;
-    line-height: 31px;
-    text-decoration: none;
-    color: #333; }
-    .button__item:hover {
-      background-color: #2ca9c9; }
+    color: #000;
+    opacity: 0.7; }
 
 .about-us {
-  margin: 0 auto;
-  width: 780px;
-  text-align: center; }
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d; }
+  .about-us__wrapper {
+    text-align: center;
+    position: relative; }
   .about-us__header {
     font-family: "PT SANS";
     margin: 43px 0 0 0; }
+  .about-us__title {
+    opacity: 0.7; }
   .about-us__icon-list {
     text-align: center;
     margin: 32px 0 0 10px; }
@@ -174,10 +184,11 @@
     width: 122px; }
   .about-us__text {
     font-size: 0.825rem;
-    padding: 6px 0 0 0; }
+    padding: 6px 0 0 0;
+    opacity: 0.7; }
   .about-us__carousel-buttons {
     width: 55px;
-    margin: 28px auto 0 auto;
+    margin: 28px auto;
     padding: 0 0 0 12px; }
   .about-us__carousel-buttons-item {
     display: inline-block;
@@ -188,5 +199,63 @@
     text-decoration: none; }
   .about-us__carousel-buttons-item_active {
     background-color: #2ca9c9; }
+
+.comments {
+  width: 100%;
+  display: inline-block;
+  background-image: url("img/comments_background.jpg");
+  text-align: center;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  color: #eee; }
+  .comments__wrapper {
+    text-align: center;
+    position: relative; }
+  .comments__header {
+    font-family: "PT SANS";
+    margin: 43px 0 0 0; }
+  .comments__title {
+    opacity: 0.7; }
+  .comments__icon-list {
+    text-align: center;
+    margin: 32px 0 0 10px; }
+  .comments__icon-list-item {
+    display: inline-block;
+    width: 19.83299%;
+    margin: 0;
+    padding: 0 62px 0 62px; }
+  .comments__img {
+    width: 122px; }
+  .comments__text {
+    font-size: 0.825rem;
+    padding: 6px 0 0 0; }
+  .comments__commenter-name {
+    font-size: 0.825rem;
+    font-weight: bold;
+    opacity: 0.7; }
+  .comments__button {
+    margin: 0 auto;
+    width: 186px;
+    height: 50px;
+    text-align: center; }
+  .comments__button-item {
+    display: block;
+    height: 31px;
+    border: 1px solid #fff;
+    border-radius: 3px 3px;
+    text-align: center;
+    margin-top: 33px;
+    font-size: 0.8125rem;
+    line-height: 31px;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.7; }
+    .comments__button-item:hover {
+      background-color: #2ca9c9; }
+  .comments__arrow {
+    display: inline-block;
+    vertical-align: top;
+    margin: 36px 0 0 4px; }
 
 /*# sourceMappingURL=index.css.map */
