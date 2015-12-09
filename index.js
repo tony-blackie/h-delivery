@@ -1,3 +1,7 @@
 $(document).ready(function() {
-	$('.landing').height($(window).height());
+	var landing = $('.landing');
+	landing.height($(window).height());
+	$(window).on('resize', function() {
+		landing.height($(window).height());
+	});
 });

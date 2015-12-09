@@ -2,6 +2,10 @@
   width: 100%
   background-image: url(img/background_landing2_01.jpg)
   background-size: cover
+  -webkit-transform-style: preserve-3d
+  -moz-transform-style: preserve-3d
+  transform-style: preserve-3d
+
 .header
   margin: 0 auto
   width: 900px
@@ -46,6 +50,11 @@
   &__menu-item-link
     text-decoration: none
     color: #333333
+.landing-text
+  margin: 0 auto
+  position: relative
+  top: 50%
+  transform: translateY(-50%)
 
 .title
   margin: 0 auto
@@ -137,7 +146,7 @@
   &__header
     font-family: "PT SANS"
     margin: 43px 0 0 0
-  &__title
+
   &__icon-list
     text-align: center
     margin: 32px 0 0 10px
