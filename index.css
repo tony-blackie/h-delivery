@@ -8,11 +8,10 @@
 
 .header {
   margin: 0 auto;
-  width: 62.63048%; }
+  text-align: center; }
   .header__logo-link {
     display: inline-block;
-    text-decoration: none;
-    margin-left: 11.44444%; }
+    text-decoration: none; }
   .header__logo {
     display: inline-block;
     margin: 11px 0 0 0;
@@ -20,7 +19,7 @@
   .header__social {
     display: inline-block;
     margin-top: 22px;
-    margin-left: 0.66667%;
+    margin-left: 0.73529%;
     vertical-align: top; }
   .header__social-item {
     display: inline-block;
@@ -29,7 +28,7 @@
   .header__social-item-img {
     width: 68.75%;
     margin-top: 17px;
-    margin-left: 0.44444%; }
+    margin-left: 0.4902%; }
 
 .nav {
   display: inline-block;
