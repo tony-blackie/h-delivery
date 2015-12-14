@@ -205,6 +205,7 @@
   display: inline-block;
   background-image: url("img/comments_background.jpg");
   text-align: center;
+  background-size: cover;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -222,9 +223,9 @@
     margin: 32px 0 0 10px; }
   .comments__icon-list-item {
     display: inline-block;
-    width: 19.83299%;
+    width: 16.83299%;
     margin: 0;
-    padding: 0 62px 0 62px; }
+    padding: 0 10px 0 0; }
   .comments__img {
     width: 122px; }
   .comments__text {
@@ -256,6 +257,40 @@
   .comments__arrow {
     display: inline-block;
     vertical-align: top;
-    margin: 36px 0 0 4px; }
+    margin: 60px 0 0 4px; }
+
+.trading-platforms {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d; }
+  .trading-platforms__wrapper {
+    text-align: center;
+    position: relative; }
+  .trading-platforms__column {
+    display: inline-block;
+    width: 20%;
+    vertical-align: top; }
+  .trading-platforms__header {
+    font-family: "PT SANS";
+    margin: 43px 0 0 0; }
+  .trading-platforms__title {
+    opacity: 0.7; }
+  .trading-platforms__icon-list {
+    text-align: center;
+    margin: 32px 0 0 10px; }
+  .trading-platforms__icon-list-item {
+    display: inline-block;
+    width: 126px;
+    margin: 0;
+    padding: 0 62px 0 62px; }
+  .trading-platforms__img {
+    width: 122px; }
+  .trading-platforms__text {
+    font-size: 0.825rem;
+    padding: 6px 0 0 0;
+    opacity: 0.7; }
 
 /*# sourceMappingURL=index.css.map */
