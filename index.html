@@ -3,8 +3,8 @@
 <head lang="en">
 	<meta charset="UTF-8">
 	<title></title>
-	<script src="jquery-2.1.4.js"></script>
-	<script src="index.js"></script>
+	<script src="jquery-2.1.4.js" defer></script>
+	<script src="index.js" defer></script>
 	<link rel="stylesheet" href="node_modules/normalize.css/normalize.css"/>
 	<link rel="stylesheet" href="index.css"/>
 </head>
@@ -20,16 +20,16 @@
 					<a class="nav__menu-item-link" href="">Главная</a>
 				</li>
 				<li class="nav__menu-item">
-					<a class="nav__menu-item-link" href="">О нас</a>
+					<a class="nav__menu-item-link nav__menu-item-about">О нас</a>
 				</li>
 				<li class="nav__menu-item">
-					<a class="nav__menu-item-link" href="">Отзывы</a>
+					<a class="nav__menu-item-link nav__menu-item-comments">Отзывы</a>
 				</li>
 				<li class="nav__menu-item">
-					<a class="nav__menu-item-link" href="">Торговые площадки</a>
+					<a class="nav__menu-item-link nav__menu-item-trading-platforms">Торговые площадки</a>
 				</li>
 				<li class="nav__menu-item">
-					<a class="nav__menu-item-link" href="">Контакты</a>
+					<a class="nav__menu-item-link nav__menu-item-contacts">Контакты</a>
 				</li>
 			</ul>
 		</nav>
@@ -102,12 +102,39 @@
 				<img class="about-us__img" src="img/about-us_2_3.png"/>
 				<p class="about-us__text">Более 130 счастливых отзывов</p>
 			</figure>
+			<figure class="about-us__icon-list-item">
+				<img class="about-us__img" src="img/about-us_2_3.png"/>
+				<p class="about-us__text">LOL 500 довольных клиентов</p>
+			</figure>
+			<figure class="about-us__icon-list-item">
+				<img class="about-us__img" src="img/about-us_2_3.png"/>
+				<p class="about-us__text">Более 500 доставленных товаров</p>
+			</figure>
+			<figure class="about-us__icon-list-item">
+				<img class="about-us__img" src="img/about-us_1_1.png"/>
+				<p class="about-us__text">100500 счастливых отзывов</p>
+			</figure>
+			<figure class="about-us__icon-list-item">
+				<img class="about-us__img" src="img/about-us_1_2.png"/>
+				<p class="about-us__text">Более 700 доставленных товаров</p>
+			</figure>
+			<figure class="about-us__icon-list-item">
+				<img class="about-us__img" src="img/about-us_2_3.png"/>
+				<p class="about-us__text">Более 14433 счастливых отзывов</p>
+			</figure>
+			<figure class="about-us__icon-list-item">
+				<img class="about-us__img" src="img/about-us_2_3.png"/>
+				<p class="about-us__text">Более 789 доставленных товаров</p>
+			</figure>
 		</div>
 		<div class="about-us__carousel-buttons">
 			<a class="about-us__carousel-buttons-item
-			about-us__carousel-buttons-item_active" href=""></a>
-			<a class="about-us__carousel-buttons-item" href=""></a>
-			<a class="about-us__carousel-buttons-item" href=""></a>
+			about-us__carousel-buttons-item0
+			about-us__carousel-buttons-item_active"></a>
+			<a class="about-us__carousel-buttons-item
+			about-us__carousel-buttons-item1"></a>
+			<a class="about-us__carousel-buttons-item
+			about-us__carousel-buttons-item2"></a>
 		</div>
 	</div>
 </div>
@@ -117,32 +144,70 @@
 			<h2 class="comments__title">ОТЗЫВЫ</h2>
 		</div>
 		<div class="comments__icon-list">
-			<img class="comments__arrow" src="img/comments_left_arrow.png"/>
-			<figure class="comments__icon-list-item">
-				<img class="comments__img" src="img/comments_1.png"/>
-				<p class="comments__text">Lorem ipsum dolor sit amet,
-					consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-					labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-					exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-				<p class="comments__commenter-name">Евгения</p>
-			</figure>
-			<figure class="comments__icon-list-item">
-				<img class="comments__img" src="img/comments_2.png"/>
-				<p class="comments__text">Lorem ipsum dolor sit amet,
-					consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-					labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-					exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-				<p class="comments__commenter-name">Александр</p>
-			</figure>
-			<figure class="comments__icon-list-item">
-				<img class="comments__img" src="img/comments_3.png"/>
-				<p class="comments__text">Lorem ipsum dolor sit amet,
-					consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-					labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-					exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-				<p class="comments__commenter-name">Алина</p>
-			</figure>
-			<img class="comments__arrow" src="img/comments_right_arrow.png"/>
+			<div class="comments__container">
+				<img class="comments__arrow-prev comments__arrow-non-active" src="img/comments_left_arrow.png"/>
+				<div class="comments__container-icon-list-item">
+					<div class="comments__move-block">
+						<figure class="comments__icon-list-item">
+							<img class="comments__img" src="img/comments_1.png"/>
+							<p class="comments__text">Lorem ipsum dolor sit amet,
+								consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+								labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+								exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p class="comments__commenter-name">Евгения</p>
+						</figure>
+						<figure class="comments__icon-list-item">
+							<img class="comments__img" src="img/comments_2.png"/>
+							<p class="comments__text">Lorem ipsum dolor sit amet,
+								consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+								labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+								exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p class="comments__commenter-name">Александр</p>
+						</figure>
+						<figure class="comments__icon-list-item">
+							<img class="comments__img" src="img/comments_3.png"/>
+							<p class="comments__text">Lorem ipsum dolor sit amet,
+								consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+								labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+								exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p class="comments__commenter-name">Алина</p>
+						</figure>
+						<figure class="comments__icon-list-item">
+							<img class="comments__img" src="img/comments_3.png"/>
+							<p class="comments__text">ANGELINA ipsum dolor sit amet,
+								consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+								labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+								exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p class="comments__commenter-name">Алина</p>
+						</figure>
+						<figure class="comments__icon-list-item">
+							<img class="comments__img" src="img/comments_3.png"/>
+							<p class="comments__text">LOL ipsum dolor sit amet,
+								consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+								labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+								exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p class="comments__commenter-name">Алина</p>
+						</figure>
+						<figure class="comments__icon-list-item">
+							<img class="comments__img" src="img/comments_2.png"/>
+							<p class="comments__text">ALOHA ipsum dolor sit amet,
+								consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+								labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+								exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p class="comments__commenter-name">Александр</p>
+						</figure>
+						<figure class="comments__icon-list-item">
+							<img class="comments__img" src="img/comments_1.png"/>
+							<p class="comments__text">LIZA LIZA LIZA ipsum dolor sit amet,
+								consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+								labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+								exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p class="comments__commenter-name">Евгения</p>
+						</figure>
+					</div>
+				</div>
+				<img class="comments__arrow-next" src="img/comments_right_arrow.png"/>
+			</div>
 		</div>
 		<div class="comments__button">
 			<a class="comments__button-item" href="">Еще отзывы</a>

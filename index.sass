@@ -77,6 +77,9 @@
   &__menu-item-link
     text-decoration: none
     color: #000
+  .nav__menu-item-link:hover
+    cursor: pointer
+
 .landing-text
   text-align: center
   position: relative
@@ -182,7 +185,7 @@
   &__img
     width: 122px
   &__text
-    font-size: 0.825rem
+    font-size: 1rem
     padding: 6px 0 0 0
     opacity: 0.7
   &__carousel-buttons
@@ -218,11 +221,15 @@
   &__title
     opacity: 0.7
   &__icon-list
+    position: relative
     text-align: center
     margin: 32px 0 0 10px
   &__icon-list-item
-    display: inline-block
-    width: 16.83299%
+    display: block
+    float: left
+    width: 350px
+    //display: inline-block
+    //width: 16.83299%
     margin: 0
     padding: 0 10px 0 0
   &__img
@@ -257,6 +264,44 @@
     display: inline-block
     vertical-align: top
     margin: 60px 0 0 4px
+  &__arrow-prev
+    position: absolute
+    bottom: 0
+    left: 0
+    margin: auto
+    top: 0
+    z-index: 99
+    cursor: pointer
+  &__arrow-next
+    position: absolute
+    bottom: 0
+    right: 0
+    margin: auto
+    top: 0
+    z-index: 99
+    cursor: pointer
+  &__container
+    width: 60%
+    margin: 0 auto
+    position: relative
+  &__container-icon-list-item
+    position: relative
+    width: 95%
+    margin: 0 auto
+    overflow: hidden
+    clear: both
+  &__move-block
+    width: 5000px
+    position: relative
+    transition: all .8s ease-in-out
+    -webkit-transition: all .8s ease-in-out /** Chrome & Safari **/
+    -moz-transition: all .8s ease-in-out /** Firefox **/
+    -o-transition: all .8s ease-in-out /** Opera **/
+  &__arrow-non-active
+    cursor: default
+    -moz-opacity: 0.70
+    -khtml-opacity: 0.70
+    opacity: 0.70
 
 .trading-platforms
   width: 100%

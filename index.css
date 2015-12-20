@@ -76,6 +76,8 @@
   .nav__menu-item-link {
     text-decoration: none;
     color: #000; }
+  .nav .nav__menu-item-link:hover {
+    cursor: pointer; }
 
 .landing-text {
   text-align: center;
@@ -185,7 +187,7 @@
   .about-us__img {
     width: 122px; }
   .about-us__text {
-    font-size: 0.825rem;
+    font-size: 1rem;
     padding: 6px 0 0 0;
     opacity: 0.7; }
   .about-us__carousel-buttons {
@@ -221,11 +223,13 @@
   .comments__title {
     opacity: 0.7; }
   .comments__icon-list {
+    position: relative;
     text-align: center;
     margin: 32px 0 0 10px; }
   .comments__icon-list-item {
-    display: inline-block;
-    width: 16.83299%;
+    display: block;
+    float: left;
+    width: 350px;
     margin: 0;
     padding: 0 10px 0 0; }
   .comments__img {
@@ -260,6 +264,44 @@
     display: inline-block;
     vertical-align: top;
     margin: 60px 0 0 4px; }
+  .comments__arrow-prev {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    top: 0;
+    z-index: 99;
+    cursor: pointer; }
+  .comments__arrow-next {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    z-index: 99;
+    cursor: pointer; }
+  .comments__container {
+    width: 60%;
+    margin: 0 auto;
+    position: relative; }
+  .comments__container-icon-list-item {
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    overflow: hidden;
+    clear: both; }
+  .comments__move-block {
+    width: 5000px;
+    position: relative;
+    transition: all 0.8s ease-in-out;
+    -webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    -o-transition: all 0.8s ease-in-out; }
+  .comments__arrow-non-active {
+    cursor: default;
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    opacity: 0.7; }
 
 .trading-platforms {
   width: 100%;
@@ -301,7 +343,7 @@
     height: 122px; }
   .horizontal-column__img {
     display: inline-block;
-    width: 75%;
+    width: 50%;
     vertical-align: middle; }
   .horizontal-column__text-wrapper {
     display: inline-block;
