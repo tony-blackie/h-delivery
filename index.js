@@ -100,13 +100,13 @@ $(document).ready(function() {
 			$nextBtn = $(".comments__arrow-next"),
 			widthContainerBlock = $(".comments__container-icon-list-item").width(),
 			$listItem = $(".comments__icon-list-item"),
-			widthListItem = widthContainerBlock / 3 - 10,
+			widthListItem = $listItem.width(),
 			numberChildInMoveBlock = $moveBlock.children().length,
 			currentPositionSlider = 3,
 			widthListItemForAnimate = widthContainerBlock / 3,
 			widthForAnimate = 0;
 
-		$listItem.width(widthListItem);
+		//$listItem.width(widthListItem);
 		$moveBlock.width(widthListItem * numberChildInMoveBlock + 100);
 
 		$nextBtn.bind('click', movedNext);
@@ -115,7 +115,7 @@ $(document).ready(function() {
 		function movedNext () {
 			if(currentPositionSlider > numberChildInMoveBlock - 1) { return }
 
-			widthForAnimate -=widthListItemForAnimate;
+			widthForAnimate -= widthListItemForAnimate;
 			$moveBlock.css({"transform": "translate(" + widthForAnimate + "px,0)",
 				"-webkit-transition": "translate(" + widthForAnimate + "px,0)",
 				"-moz-transition": "translate(" + widthForAnimate + "px,0)",
