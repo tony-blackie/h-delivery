@@ -5,6 +5,14 @@
   html
     font-size: 19px
 
+@font-face
+  font-family: openSansRegular
+  src: url(font/OpenSans-Regular.ttf)
+@font-face
+  font-family: openSansLight
+  src: url(font/OpenSans-Light.ttf)
+
+
 .landing
   width: 100%
   background-image: url(img/background_landing2_01.jpg)
@@ -56,13 +64,14 @@
     margin-left: 0.490196078431% // 4px / 816px
 
 .nav
+  font-family: openSansRegular
   display: inline-block
   margin-top: 32px
   margin-left: 0.974251913709%
   vertical-align: top
   &__menu
     margin: 0
-    font-family: "PT SANS"
+    font-family: openSansRegular
     font-size: 1rem
     opacity: 0.9
   &__menu-item
@@ -87,12 +96,13 @@
   transform: translateY(-50%)
 
 .title
+  font-family: openSansRegular
   text-align: center
   &__header
     margin-top: 58px
     margin-left: 0.417536534447%
     text-align: center
-    font-family: "PT SANS"
+    font-family: openSansRegular
     font-weight: normal
     font-size: 2.5rem
     color: #000
@@ -129,7 +139,7 @@
   text-align: center
   margin-top: 39px
   padding: 0
-  font-family: "PT SANS"
+  font-family: openSansRegular
   &__item
     display: inline-block
     text-align: center
@@ -156,22 +166,26 @@
     width: 36%
     vertical-align: middle
   &__text
+    font-family: openSansRegular
     font-size: 1rem
     color: #000
     opacity: 0.7
 .about-us
+  font-family: openSansRegular
   width: 100%
   display: inline-block
   text-align: center
   -webkit-transform-style: preserve-3d
   -moz-transform-style: preserve-3d
   transform-style: preserve-3d
+  color: #000
   &__wrapper
     text-align: center
     position: relative
   &__header
-    font-family: "PT SANS"
+    font-family: openSansLight
     margin: 43px 0 0 0
+    color: #888
   &__title
     opacity: 0.7
   &__icon-list
@@ -203,6 +217,7 @@
     background-color: #2ca9c9
 
 .comments
+  font-family: openSansRegular
   width: 100%
   display: inline-block
   background-image: url('img/comments_background.jpg')
@@ -216,7 +231,7 @@
     text-align: center
     position: relative
   &__header
-    font-family: "PT SANS"
+    font-family: openSansRegular
     margin: 43px 0 0 0
   &__title
     opacity: 0.7
@@ -228,8 +243,6 @@
     display: block
     float: left
     width: 300px
-    //display: inline-block
-    //width: 16.83299%
     margin: 0
     padding: 0 10px 0 0
   &__img
@@ -304,6 +317,7 @@
     opacity: 0.70
 
 .trading-platforms
+  font-family: openSansRegular
   width: 100%
   display: inline-block
   text-align: center
@@ -318,12 +332,32 @@
     width: 20%
     vertical-align: top
   &__header
-    font-family: "PT SANS"
+    font-family: openSansRegular
     margin: 43px 0 0 0
   &__title
     opacity: 0.7
+  &__button
+    margin: 0 auto
+    width: 186px
+    height: 50px
+    text-align: center
+  &__button-item
+    display: block
+    height: 31px
+    border: 1px solid #000
+    border-radius: 3px 3px
+    text-align: center
+    margin-top: 33px
+    font-size: 0.8125rem
+    line-height: 31px
+    text-decoration: none
+    color: #000
+    opacity: 0.7
+    &:hover
+      background-color: #2ca9c9
 
 .horizontal-column
+  font-family: openSansRegular
   display: inline-block
   width: 420px
   vertical-align: top

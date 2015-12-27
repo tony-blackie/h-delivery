@@ -4,6 +4,12 @@
 @media screen and (min-width: 1500px) {
   html {
     font-size: 19px; } }
+@font-face {
+  font-family: openSansRegular;
+  src: url(font/OpenSans-Regular.ttf); }
+@font-face {
+  font-family: openSansLight;
+  src: url(font/OpenSans-Light.ttf); }
 .landing {
   width: 100%;
   background-image: url(img/background_landing2_01.jpg);
@@ -55,13 +61,14 @@
     margin-left: 0.4902%; }
 
 .nav {
+  font-family: openSansRegular;
   display: inline-block;
   margin-top: 32px;
   margin-left: 0.97425%;
   vertical-align: top; }
   .nav__menu {
     margin: 0;
-    font-family: "PT SANS";
+    font-family: openSansRegular;
     font-size: 1rem;
     opacity: 0.9; }
   .nav__menu-item {
@@ -86,12 +93,13 @@
   transform: translateY(-50%); }
 
 .title {
+  font-family: openSansRegular;
   text-align: center; }
   .title__header {
     margin-top: 58px;
     margin-left: 0.41754%;
     text-align: center;
-    font-family: "PT SANS";
+    font-family: openSansRegular;
     font-weight: normal;
     font-size: 2.5rem;
     color: #000;
@@ -130,7 +138,7 @@
   text-align: center;
   margin-top: 39px;
   padding: 0;
-  font-family: "PT SANS"; }
+  font-family: openSansRegular; }
   .landing-icons__item {
     display: inline-block;
     text-align: center;
@@ -157,23 +165,27 @@
     width: 36%;
     vertical-align: middle; }
   .landing-icons__text {
+    font-family: openSansRegular;
     font-size: 1rem;
     color: #000;
     opacity: 0.7; }
 
 .about-us {
+  font-family: openSansRegular;
   width: 100%;
   display: inline-block;
   text-align: center;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d; }
+  transform-style: preserve-3d;
+  color: #000; }
   .about-us__wrapper {
     text-align: center;
     position: relative; }
   .about-us__header {
-    font-family: "PT SANS";
-    margin: 43px 0 0 0; }
+    font-family: openSansLight;
+    margin: 43px 0 0 0;
+    color: #888; }
   .about-us__title {
     opacity: 0.7; }
   .about-us__icon-list {
@@ -205,6 +217,7 @@
     background-color: #2ca9c9; }
 
 .comments {
+  font-family: openSansRegular;
   width: 100%;
   display: inline-block;
   background-image: url("img/comments_background.jpg");
@@ -218,7 +231,7 @@
     text-align: center;
     position: relative; }
   .comments__header {
-    font-family: "PT SANS";
+    font-family: openSansRegular;
     margin: 43px 0 0 0; }
   .comments__title {
     opacity: 0.7; }
@@ -304,6 +317,7 @@
     opacity: 0.7; }
 
 .trading-platforms {
+  font-family: openSansRegular;
   width: 100%;
   display: inline-block;
   text-align: center;
@@ -318,12 +332,32 @@
     width: 20%;
     vertical-align: top; }
   .trading-platforms__header {
-    font-family: "PT SANS";
+    font-family: openSansRegular;
     margin: 43px 0 0 0; }
   .trading-platforms__title {
     opacity: 0.7; }
+  .trading-platforms__button {
+    margin: 0 auto;
+    width: 186px;
+    height: 50px;
+    text-align: center; }
+  .trading-platforms__button-item {
+    display: block;
+    height: 31px;
+    border: 1px solid #000;
+    border-radius: 3px 3px;
+    text-align: center;
+    margin-top: 33px;
+    font-size: 0.8125rem;
+    line-height: 31px;
+    text-decoration: none;
+    color: #000;
+    opacity: 0.7; }
+    .trading-platforms__button-item:hover {
+      background-color: #2ca9c9; }
 
 .horizontal-column {
+  font-family: openSansRegular;
   display: inline-block;
   width: 420px;
   vertical-align: top; }
