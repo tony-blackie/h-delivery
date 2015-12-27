@@ -183,11 +183,12 @@
     text-align: center;
     position: relative; }
   .about-us__header {
-    font-family: openSansLight;
-    margin: 43px 0 0 0;
-    color: #888; }
+    margin: 43px 0 0 0; }
   .about-us__title {
     opacity: 0.7; }
+  .about-us__text-header {
+    font-family: openSansLight;
+    color: #888; }
   .about-us__icon-list {
     text-align: center;
     margin: 32px 0 0 10px; }
