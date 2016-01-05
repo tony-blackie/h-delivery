@@ -41,7 +41,9 @@
   text-align: center; }
   .header__logo-link {
     display: inline-block;
-    text-decoration: none; }
+    text-decoration: none;
+    vertical-align: bottom;
+  }
   .header__logo {
     display: inline-block;
     margin-top: 11px;
@@ -50,13 +52,14 @@
     display: inline-block;
     margin-top: 22px;
     margin-left: 0.73529%;
-    vertical-align: top; }
+    vertical-align: bottom; }
   .header__social-item {
     display: inline-block;
     text-decoration: none;
+    width: 40px
     margin: 0; }
   .header__social-item-img {
-    width: 68.75%;
+    //width: 68.75%;
     margin-top: 17px;
     margin-left: 0.4902%; }
 
@@ -65,7 +68,7 @@
   display: inline-block;
   margin-top: 32px;
   margin-left: 0.97425%;
-  vertical-align: top; }
+  vertical-align: bottom; }
   .nav__menu {
     margin: 0;
     font-family: openSansRegular;
@@ -446,7 +449,7 @@
     font-size: 1.5rem;
     text-align: center; }
   .footer__contact-wrapper {
-    width: 50%;
+    width: 725px;
     margin: 0 auto;
     margin-top: 36px; }
   .footer__contact-social-wrapper {
@@ -454,40 +457,65 @@
     text-align: left;
     position: relative;
     transform: translateY(4%);
-    font-size: 0.8rem; }
+    font-size: 0.8rem;
+    margin-left: 25px; }
   .footer__phone-wrapper {
-    margin: 0; }
+    margin: 0 0 6px 0;
+  }
   .footer__phone-img {
     display: inline-block; }
   .footer__phone-number {
     display: inline-block;
-    transform: translateY(-50%);
-    margin-left: 8px; }
+    vertical-align: top;
+    margin: 0 0 0 8px;
+    line-height: 25px;
+  }
   .footer__viber-wrapper {
-    margin: 0; }
+    margin: 0 0 6px 0;
+  }
   .footer__viber-img {
     display: inline-block; }
   .footer__viber-number {
     display: inline-block;
-    transform: translateY(-50%);
-    margin-left: 8px; }
+    vertical-align: top;
+    margin: 0 0 0 8px;
+    line-height: 25px;
+  }
   .footer__viber-link {
     display: inline-block;
     text-decoration: none;
-    transform: translateY(-50%); }
+    line-height: 25px;
+    vertical-align: top;
+  }
   .footer__mail-wrapper {
-    margin: 0; }
+    margin: 0 0 6px 0;
+  }
   .footer__mail-img {
     display: inline-block; }
   .footer__mail-text {
     display: inline-block;
-    transform: translateY(-50%);
-    margin-left: 8px; }
-  .footer__copyright {
+    vertical-align: top;
+    margin: 0 0 0 8px;
+    line-height: 25px;
+    text-decoration: underline;}
+  .footer__social-buttons{
+    margin-top: 30px;
+  }
+  .footer__social-item{
+    width: 40px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+.copyright {
     text-align: center;
     width: 100%;
     background-color: #373737;
-    color: #FFF; }
+    color: #FFF;
+    line-height: 50px;
+    height: 50px;
+    margin-top: 50px;
+}
 
 .contact-form {
   display: inline-block;
@@ -502,7 +530,7 @@
   .contact-form__name {
     display: block;
     height: 29px;
-    width: 184px;
+    width: 178px;
     border: 1px solid #000;
     border-radius: 3px 3px;
     text-align: left;
@@ -515,7 +543,7 @@
   .contact-form__phone {
     display: block;
     height: 29px;
-    width: 184px;
+    width: 178px;
     border: 1px solid #000;
     border-radius: 3px 3px;
     text-align: left;
@@ -529,7 +557,7 @@
   .contact-form__email {
     display: block;
     height: 29px;
-    width: 184px;
+    width: 178px;
     border: 1px solid #000;
     border-radius: 3px 3px;
     text-align: left;
@@ -542,20 +570,36 @@
     background: none; }
   .contact-form__message {
     display: inline-block;
-    vertical-align: top; }
+    vertical-align: top;
+    margin-left: 3px;
+  }
   .contact-form__message-textarea {
     display: block;
-    height: 98px;
-    width: 184px;
+    height: 110px;
+    width: 224px;
     border: 1px solid #000;
     border-radius: 3px 3px;
     text-align: left;
-    margin-top: 2px;
     font-size: 0.8125rem;
     line-height: 31px;
     text-decoration: none;
     color: #000;
     opacity: 0.7;
-    background: none; }
+background: none; }
+  .contact-form__submit {
+    display: inline-block;
+    float: right;
+    height: 36px;
+    width: 186px;
+    border: 1px solid #333333;
+    border-radius: 3px 3px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8125rem;
+    line-height: 31px;
+    text-decoration: none;
+    color: #000;
+    background: #2ca9c9;
+  }
 
 /*# sourceMappingURL=index.css.map */

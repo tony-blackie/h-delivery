@@ -59,7 +59,7 @@ $(document).ready(function() {
 		var arrValue = createElementSlider(),
 			$containerForImg = $(".about-us__icon-list"),
 			timer,
-			timeForTimerMs = 5000,
+			timeForTimerMs = 3800,
 			valueNumberSliderItem = 0;
 
 		$containerForImg.append(arrValue[0]);
@@ -164,9 +164,13 @@ $(document).ready(function() {
 
 	function scrollPage() {
 		var $aboutBtn = $(".nav__menu-item-about"),
-			$aboutBlock = $('.about-us'),
+			$aboutBlock = $(".about-us"),
 			$commentsBtn = $(".nav__menu-item-comments"),
-			$commentsBlock = $(".comments");
+			$commentsBlock = $(".comments"),
+			$tradingPlatformsBtn = $(".nav__menu-item-trading-platforms"),
+			$tradingPlatformsBlock = $(".trading-platforms"),
+			$contactsBtn = $(".nav__menu-item-contacts"),
+			$contactsBlock = $(".footer");
 
 		$aboutBtn.click(function() {
 			$('html, body').animate({
@@ -177,6 +181,19 @@ $(document).ready(function() {
 		$commentsBtn.click(function() {
 			$('html, body').animate({
 				scrollTop: $commentsBlock.offset().top
+			}, 1000);
+			return false;
+		});
+		$tradingPlatformsBtn.click(function() {
+			var extraMargin = 5;
+			$('html, body').animate({
+				scrollTop: $tradingPlatformsBlock.offset().top + extraMargin
+			}, 1000);
+			return false;
+		});
+		$contactsBtn.click(function() {
+			$('html, body').animate({
+				scrollTop: $contactsBlock.offset().top
 			}, 1000);
 			return false;
 		});
