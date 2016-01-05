@@ -433,50 +433,72 @@
   -webkit-transform-style: preserve-3d
   -moz-transform-style: preserve-3d
   transform-style: preserve-3d
+  font-family: openSansRegular
   &__wrapper
-    text-align: center
     position: relative
     -webkit-transform-style: preserve-3d
     -moz-transform-style: preserve-3d
     transform-style: preserve-3d
+    margin: 0 auto
     //top: 35%
     //transform: translateY(-50%)
+  &__title
+    padding-top: 45px
+    font-size: 1.5rem
+    text-align: center
+  &__contact-wrapper
+    width: 50%
+    margin: 0 auto
+    margin-top: 36px
   &__contact-social-wrapper
     display: inline-block
     text-align: left
     position: relative
     transform: translateY(4%)
-  &__contact
-
+    font-size: 0.8rem
   &__phone-wrapper
     margin: 0
   &__phone-img
     display: inline-block
   &__phone-number
     display: inline-block
+    transform: translateY(-50%)
+    margin-left: 8px
   &__viber-wrapper
     margin: 0
   &__viber-img
     display: inline-block
   &__viber-number
     display: inline-block
+    transform: translateY(-50%)
+    margin-left: 8px
   &__viber-link
     display: inline-block
     text-decoration: none
+    transform: translateY(-50%)
   &__mail-wrapper
     margin: 0
   &__mail-img
     display: inline-block
   &__mail-text
     display: inline-block
+    transform: translateY(-50%)
+    margin-left: 8px
+  &__copyright
+    text-align: center
+    width: 100%
+    background-color: #373737
+    color: #FFF
 .contact-form
   display: inline-block
   text-align: center
   position: relative
-  transform: translateY(-50%)
   margin-left: 20px
+  font-family: openSansRegular
+  vertical-align: top
   &__details
     display: inline-block
+    vertical-align: top
   &__name
     display: block
     height: 29px
@@ -484,7 +506,6 @@
     border: 1px solid #000
     border-radius: 3px 3px
     text-align: left
-    margin-top: 33px
     font-size: 0.8125rem
     line-height: 31px
     text-decoration: none
@@ -498,7 +519,7 @@
     border: 1px solid #000
     border-radius: 3px 3px
     text-align: left
-    margin-top: 2px
+    margin-top: 8px
     font-size: 0.8125rem
     line-height: 31px
     text-decoration: none
@@ -512,7 +533,7 @@
     border: 1px solid #000
     border-radius: 3px 3px
     text-align: left
-    margin-top: 2px
+    margin-top: 8px
     font-size: 0.8125rem
     line-height: 31px
     text-decoration: none
@@ -521,7 +542,7 @@
     background: none
   &__message
     display: inline-block
-    transform: translateY(21%)
+    vertical-align: top
   &__message-textarea
     display: block
     height: 98px

@@ -433,48 +433,72 @@
   background-size: cover;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d; }
+  transform-style: preserve-3d;
+  font-family: openSansRegular; }
   .footer__wrapper {
-    text-align: center;
     position: relative;
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
-    transform-style: preserve-3d; }
+    transform-style: preserve-3d;
+    margin: 0 auto; }
+  .footer__title {
+    padding-top: 45px;
+    font-size: 1.5rem;
+    text-align: center; }
+  .footer__contact-wrapper {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 36px; }
   .footer__contact-social-wrapper {
     display: inline-block;
     text-align: left;
     position: relative;
-    transform: translateY(4%); }
+    transform: translateY(4%);
+    font-size: 0.8rem; }
   .footer__phone-wrapper {
     margin: 0; }
   .footer__phone-img {
     display: inline-block; }
   .footer__phone-number {
-    display: inline-block; }
+    display: inline-block;
+    transform: translateY(-50%);
+    margin-left: 8px; }
   .footer__viber-wrapper {
     margin: 0; }
   .footer__viber-img {
     display: inline-block; }
   .footer__viber-number {
-    display: inline-block; }
+    display: inline-block;
+    transform: translateY(-50%);
+    margin-left: 8px; }
   .footer__viber-link {
     display: inline-block;
-    text-decoration: none; }
+    text-decoration: none;
+    transform: translateY(-50%); }
   .footer__mail-wrapper {
     margin: 0; }
   .footer__mail-img {
     display: inline-block; }
   .footer__mail-text {
-    display: inline-block; }
+    display: inline-block;
+    transform: translateY(-50%);
+    margin-left: 8px; }
+  .footer__copyright {
+    text-align: center;
+    width: 100%;
+    background-color: #373737;
+    color: #FFF; }
 
 .contact-form {
   display: inline-block;
   text-align: center;
   position: relative;
-  transform: translateY(-50%);
-  margin-left: 20px; }
+  margin-left: 20px;
+  font-family: openSansRegular;
+  vertical-align: top; }
   .contact-form__details {
-    display: inline-block; }
+    display: inline-block;
+    vertical-align: top; }
   .contact-form__name {
     display: block;
     height: 29px;
@@ -482,7 +506,6 @@
     border: 1px solid #000;
     border-radius: 3px 3px;
     text-align: left;
-    margin-top: 33px;
     font-size: 0.8125rem;
     line-height: 31px;
     text-decoration: none;
@@ -496,7 +519,7 @@
     border: 1px solid #000;
     border-radius: 3px 3px;
     text-align: left;
-    margin-top: 2px;
+    margin-top: 8px;
     font-size: 0.8125rem;
     line-height: 31px;
     text-decoration: none;
@@ -510,7 +533,7 @@
     border: 1px solid #000;
     border-radius: 3px 3px;
     text-align: left;
-    margin-top: 2px;
+    margin-top: 8px;
     font-size: 0.8125rem;
     line-height: 31px;
     text-decoration: none;
@@ -519,7 +542,7 @@
     background: none; }
   .contact-form__message {
     display: inline-block;
-    transform: translateY(21%); }
+    vertical-align: top; }
   .contact-form__message-textarea {
     display: block;
     height: 98px;
