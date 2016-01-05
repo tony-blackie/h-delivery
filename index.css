@@ -427,4 +427,112 @@
     font-size: 0.825rem;
     text-align: left; }
 
+.footer {
+  width: 100%;
+  background-image: url(img/footer-background.jpg);
+  background-size: cover;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d; }
+  .footer__wrapper {
+    text-align: center;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d; }
+  .footer__contact-social-wrapper {
+    display: inline-block;
+    text-align: left;
+    position: relative;
+    transform: translateY(4%); }
+  .footer__phone-wrapper {
+    margin: 0; }
+  .footer__phone-img {
+    display: inline-block; }
+  .footer__phone-number {
+    display: inline-block; }
+  .footer__viber-wrapper {
+    margin: 0; }
+  .footer__viber-img {
+    display: inline-block; }
+  .footer__viber-number {
+    display: inline-block; }
+  .footer__viber-link {
+    display: inline-block;
+    text-decoration: none; }
+  .footer__mail-wrapper {
+    margin: 0; }
+  .footer__mail-img {
+    display: inline-block; }
+  .footer__mail-text {
+    display: inline-block; }
+
+.contact-form {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  transform: translateY(-50%);
+  margin-left: 20px; }
+  .contact-form__details {
+    display: inline-block; }
+  .contact-form__name {
+    display: block;
+    height: 29px;
+    width: 184px;
+    border: 1px solid #000;
+    border-radius: 3px 3px;
+    text-align: left;
+    margin-top: 33px;
+    font-size: 0.8125rem;
+    line-height: 31px;
+    text-decoration: none;
+    color: #000;
+    opacity: 0.7;
+    background: none; }
+  .contact-form__phone {
+    display: block;
+    height: 29px;
+    width: 184px;
+    border: 1px solid #000;
+    border-radius: 3px 3px;
+    text-align: left;
+    margin-top: 2px;
+    font-size: 0.8125rem;
+    line-height: 31px;
+    text-decoration: none;
+    color: #000;
+    opacity: 0.7;
+    background: none; }
+  .contact-form__email {
+    display: block;
+    height: 29px;
+    width: 184px;
+    border: 1px solid #000;
+    border-radius: 3px 3px;
+    text-align: left;
+    margin-top: 2px;
+    font-size: 0.8125rem;
+    line-height: 31px;
+    text-decoration: none;
+    color: #000;
+    opacity: 0.7;
+    background: none; }
+  .contact-form__message {
+    display: inline-block;
+    transform: translateY(21%); }
+  .contact-form__message-textarea {
+    display: block;
+    height: 98px;
+    width: 184px;
+    border: 1px solid #000;
+    border-radius: 3px 3px;
+    text-align: left;
+    margin-top: 2px;
+    font-size: 0.8125rem;
+    line-height: 31px;
+    text-decoration: none;
+    color: #000;
+    opacity: 0.7;
+    background: none; }
+
 /*# sourceMappingURL=index.css.map */
