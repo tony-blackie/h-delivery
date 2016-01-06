@@ -50,7 +50,7 @@
   .header__social {
     display: inline-block;
     margin-top: 22px;
-    margin-left: 0.73529%;
+    margin-left: 10px;
     vertical-align: bottom; }
   .header__social-item {
     display: inline-block;
@@ -66,7 +66,7 @@
   font-family: openSansRegular;
   display: inline-block;
   margin-top: 32px;
-  margin-left: 0.97425%;
+  margin-left: 10px;
   vertical-align: bottom; }
   .nav__menu {
     margin: 0;
@@ -125,7 +125,7 @@
   .phone__number {
     display: inline-block;
     vertical-align: top;
-    margin: 4px 0 0 11px;
+    margin: 1px 0 0 11px;
     font-size: 1rem;
     color: #000;
     opacity: 0.7; }
@@ -191,7 +191,8 @@
     opacity: 0.7; }
   .about-us__text-header {
     font-family: openSansLight;
-    color: #888; }
+    color: #000;
+    opacity: 0.7; }
   .about-us__icon-list {
     text-align: center;
     margin: 32px 0 0 10px; }
@@ -230,11 +231,12 @@
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  color: #eee; }
+  color: #fff; }
   .comments__wrapper {
     text-align: center;
     position: relative; }
   .comments__header {
+    color: #fff;
     font-family: openSansRegular;
     margin: 43px 0 0 0; }
   .comments__title {
@@ -252,6 +254,7 @@
   .comments__img {
     width: 122px; }
   .comments__text {
+    opacity: 0.7;
     font-size: 0.825rem;
     padding: 6px 0 0 0; }
   .comments__commenter-name {
