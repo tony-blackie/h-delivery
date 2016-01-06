@@ -501,6 +501,9 @@
     width: 40px;
     display: inline-block;
     white-space: nowrap; }
+  .footer__social-item-img {
+    width: 30px;
+    height: 30px; }
 
 .contact-form {
   display: inline-block;
