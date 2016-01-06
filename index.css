@@ -42,8 +42,7 @@
   .header__logo-link {
     display: inline-block;
     text-decoration: none;
-    vertical-align: bottom;
-  }
+    vertical-align: bottom; }
   .header__logo {
     display: inline-block;
     margin-top: 11px;
@@ -56,10 +55,10 @@
   .header__social-item {
     display: inline-block;
     text-decoration: none;
-    width: 40px
+    width: 40px;
     margin: 0; }
   .header__social-item-img {
-    //width: 68.75%;
+    width: 68.75%;
     margin-top: 17px;
     margin-left: 0.4902%; }
 
@@ -141,6 +140,7 @@
   text-align: center;
   margin-top: 39px;
   padding: 0;
+  position: relative;
   font-family: openSansRegular; }
   .landing-icons__item {
     display: inline-block;
@@ -152,8 +152,8 @@
     width: 100%; }
   .landing-icons__arrow {
     display: inline-block;
-    vertical-align: top;
-    margin: 36px 0 0 4px;
+    position: absolute;
+    top: 35%;
     width: 8px; }
   .landing-icons__img {
     width: 48%; }
@@ -460,62 +460,44 @@
     font-size: 0.8rem;
     margin-left: 25px; }
   .footer__phone-wrapper {
-    margin: 0 0 6px 0;
-  }
+    margin: 0; }
   .footer__phone-img {
     display: inline-block; }
   .footer__phone-number {
     display: inline-block;
-    vertical-align: top;
     margin: 0 0 0 8px;
     line-height: 25px;
-  }
+    vertical-align: top; }
   .footer__viber-wrapper {
-    margin: 0 0 6px 0;
-  }
+    margin: 0; }
   .footer__viber-img {
     display: inline-block; }
   .footer__viber-number {
     display: inline-block;
-    vertical-align: top;
     margin: 0 0 0 8px;
     line-height: 25px;
-  }
+    vertical-align: top; }
   .footer__viber-link {
     display: inline-block;
     text-decoration: none;
     line-height: 25px;
-    vertical-align: top;
-  }
+    vertical-align: top; }
   .footer__mail-wrapper {
-    margin: 0 0 6px 0;
-  }
+    margin: 0; }
   .footer__mail-img {
     display: inline-block; }
   .footer__mail-text {
     display: inline-block;
-    vertical-align: top;
     margin: 0 0 0 8px;
     line-height: 25px;
-    text-decoration: underline;}
-  .footer__social-buttons{
-    margin-top: 30px;
-  }
-  .footer__social-item{
+    vertical-align: top;
+    text-decoration: underline; }
+  .footer__social-buttons {
+    margin-top: 30px; }
+  .footer__social-item {
     width: 40px;
     display: inline-block;
-    white-space: nowrap;
-  }
-
-.copyright {
-    text-align: center;
-    width: 100%;
-    background-color: #373737;
-    color: #FFF;
-    line-height: 50px;
-    height: 50px;
-    margin-top: 50px;
-}
+    white-space: nowrap; }
 
 .contact-form {
   display: inline-block;
@@ -571,8 +553,7 @@
   .contact-form__message {
     display: inline-block;
     vertical-align: top;
-    margin-left: 3px;
-  }
+    margin-left: 3px; }
   .contact-form__message-textarea {
     display: block;
     height: 110px;
@@ -585,12 +566,11 @@
     text-decoration: none;
     color: #000;
     opacity: 0.7;
-background: none; }
+    background: none; }
   .contact-form__submit {
     display: inline-block;
     float: right;
     height: 36px;
-    width: 186px;
     border: 1px solid #333333;
     border-radius: 3px 3px;
     text-align: center;
@@ -600,6 +580,15 @@ background: none; }
     text-decoration: none;
     color: #000;
     background: #2ca9c9;
-  }
+    width: 186px; }
+
+.copyright {
+  text-align: center;
+  width: 100%;
+  background-color: #373737;
+  color: #FFF;
+  line-height: 50px;
+  height: 50px;
+  margin-top: 50px; }
 
 /*# sourceMappingURL=index.css.map */
