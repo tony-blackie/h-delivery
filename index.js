@@ -6,7 +6,9 @@ $(document).ready(function() {
 	scrollPage();
 
 	$(window).on('resize', function() {
-		landing.height($(window).height());
+		if($(window).height > 720) {
+			landing.height($(window).height());
+		}
 	});
 
 	function slider() {
