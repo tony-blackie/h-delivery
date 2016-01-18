@@ -675,9 +675,13 @@
     width: 320px; }
     .horizontal-column__text-wrapper {
       display: block;
-      margin: 0 auto; }
+      margin: 0 auto;
+      width: 62%; }
     .horizontal-column__icon-list-item {
-      width: 320px; }
+      width: 320px;
+      margin: 0 0 30px 0; }
+    .horizontal-column__icon-list-item_no-margin {
+      margin: 0; }
 
   .footer__contact-wrapper {
     width: 100%; }
