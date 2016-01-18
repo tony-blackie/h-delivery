@@ -604,6 +604,9 @@
   margin-top: 50px;
   /* PC */ }
 
+@media screen and (min-width: 1800px) {
+  .header__logo {
+    width: 150px; } }
 @media screen and (min-width: 851px) and (max-width: 1499px) {
   html {
     font-size: 1rem; } }
@@ -641,7 +644,8 @@
   .landing-text {
     position: static;
     transform: none;
-    top: 0; }
+    top: 0;
+    margin-top: 30px; }
 
   .nav {
     display: none; }
@@ -649,7 +653,8 @@
       margin-right: 12px; }
 
   .title__header {
-    font-size: 1.2rem; }
+    font-size: 1.2rem;
+    margin-top: 0; }
 
   .landing-icons__item {
     margin: 0 10px 0 0;

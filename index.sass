@@ -602,6 +602,10 @@
   height: 50px
   margin-top: 50px
   /* PC */
+@media screen and (min-width: 1800px)
+  .header
+    &__logo
+      width: 150px
 @media screen and (min-width: 851px) and (max-width: 1499px)
   html
     font-size: 1rem
@@ -639,6 +643,7 @@
     position: static
     transform: none
     top: 0
+    margin-top: 30px
   .nav
     display: none
     &__menu-item
@@ -646,6 +651,7 @@
   .title
     &__header
       font-size: 1.2rem
+      margin-top: 0
   .landing-icons
     &__item
       margin: 0 10px 0 0
