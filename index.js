@@ -9,10 +9,6 @@ $(document).ready(function() {
 		if($(window).height > 720) {
 			landing.height($(window).height());
 		}
-
-		if($(window).width() < 1030) {
-
-		}
 	});
 
 	function slider() {
@@ -75,13 +71,13 @@ $(document).ready(function() {
 		function moveElements() {
 			$containerForImg.children().remove();
 			$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
-				.removeClass("about-us__carousel-buttons-item_active");
+					.removeClass("about-us__carousel-buttons-item_active");
 			if (valueNumberSliderItem == arrValue.length - 1) {
 				valueNumberSliderItem = -1;
 			}
 			valueNumberSliderItem++;
 			$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
-				.addClass("about-us__carousel-buttons-item_active");
+					.addClass("about-us__carousel-buttons-item_active");
 			$containerForImg.append(arrValue[valueNumberSliderItem]);
 		}
 
@@ -94,11 +90,11 @@ $(document).ready(function() {
 			clearInterval(timer);
 			$containerForImg.children().remove();
 			$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
-				.removeClass("about-us__carousel-buttons-item_active");
+					.removeClass("about-us__carousel-buttons-item_active");
 			numberImage = className.substring(63);
 			valueNumberSliderItem = numberImage;
 			$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
-				.addClass("about-us__carousel-buttons-item_active");
+					.addClass("about-us__carousel-buttons-item_active");
 			$containerForImg.append(arrValue[valueNumberSliderItem]);
 			timer = setInterval(moveElements, timeForTimerMs);
 		}

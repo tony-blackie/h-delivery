@@ -7,9 +7,9 @@
   font-family: openSansLight
   src: url(font/OpenSans-Light.ttf)
 
-
 .landing
   width: 100%
+  height: 1000px
   background-image: url(img/background_landing2_01.jpg)
   background-size: cover
   -webkit-transform-style: preserve-3d
@@ -352,7 +352,7 @@
   &__button
     margin: 0 auto
     width: 186px
-    height: 50px
+    height: 65px
     text-align: center
   &__button-item
     display: block
@@ -459,9 +459,8 @@
     font-size: 1.5rem
     text-align: center
   &__contact-wrapper
-    width: 725px
-    margin: 0 auto
-    margin-top: 36px
+    width: 750px
+    margin: 36px auto 0 auto
   &__contact-social-wrapper
     display: inline-block
     text-align: left
@@ -505,7 +504,7 @@
   &__social-buttons
     margin-top: 30px
   &__social-item
-    width: 40px
+    width: 38px
     display: inline-block
     white-space: nowrap
   &__social-item-img
@@ -524,7 +523,7 @@
   &__name
     display: block
     height: 29px
-    width: 178px
+    width: 230px
     border: 1px solid #000
     border-radius: 3px 3px
     text-align: left
@@ -537,7 +536,7 @@
   &__phone
     display: block
     height: 29px
-    width: 178px
+    width: 230px
     border: 1px solid #000
     border-radius: 3px 3px
     text-align: left
@@ -551,7 +550,7 @@
   &__email
     display: block
     height: 29px
-    width: 178px
+    width: 230px
     border: 1px solid #000
     border-radius: 3px 3px
     text-align: left
@@ -569,7 +568,7 @@
   &__message-textarea
     display: block
     height: 110px
-    width: 224px
+    width: 222px
     border: 1px solid #000
     border-radius: 3px 3px
     text-align: left
@@ -579,11 +578,12 @@
     color: #000
     opacity: 0.7
     background: none
+    padding: 0 0 0 8px
   &__submit
     display: inline-block
     float: right
     height: 36px
-    border: 1px solid #333333
+    border: 1px solid #2ca9c9
     border-radius: 3px 3px
     text-align: center
     margin-top: 20px
@@ -592,7 +592,7 @@
     text-decoration: none
     color: #000
     background: #2ca9c9
-    width: 186px
+    width: 232px
 .copyright
   text-align: center
   width: 100%
@@ -601,14 +601,19 @@
   line-height: 50px
   height: 50px
   margin-top: 50px
-
-@media screen and (min-width: 801px) and (max-width: 1499px)
+  /* PC */
+@media screen and (min-width: 1800px)
+  .header
+    &__logo
+      width: 150px
+@media screen and (min-width: 851px) and (max-width: 1499px)
   html
     font-size: 1rem
 @media screen and (min-width: 1500px)
   html
     font-size: 1.3rem
-@media screen and (min-width: 750px) and (max-width: 1030px)
+    /* Tablet */
+@media screen and (min-width: 751px) and (max-width: 1030px)
   html
     font-size: 0.895rem
   .nav
@@ -617,40 +622,37 @@
   .header
     &__social
       margin-left: 10px
-@media screen and (max-width: 800px)
+  .landing-text
+    position: static
+    transform: none
+@media screen and (min-width: 751px) and (max-width: 800px)
   .about-us
     &__icon-list-item
       padding: 0 30px 0 30px
     &__img
       width: 100px
-  .landing-icons
-    margin-top: 20px
+  /* Mobile */
 @media screen and (max-width: 750px)
+  /* Landing */
+  .about-us
+    &__icon-list-item
+      padding: 0 30px 0 30px
+    &__img
+      width: 100px
   .landing-text
-    top: 25%
     position: static
     transform: none
+    top: 0
+    margin-top: 30px
   .nav
     display: none
     &__menu-item
       margin-right: 12px
-  //@media screen and (max-width: 650px)
   .title
     &__header
-      font-size: 1.5rem
+      font-size: 1.2rem
+      margin-top: 0
   .landing-icons
-    //margin-top: 10px
-    &__item
-      margin: 0 15px 0 0
-      vertical-align: top
-    &__text
-      width: 90px
-      font-size: 0.9rem
-    &__img-mail
-      width: 48%
-  //@media screen and (min-width: 1px) and (max-width: 500px)
-  .landing-icons
-    //margin-top: 10px
     &__item
       margin: 0 10px 0 0
       vertical-align: top
@@ -659,3 +661,47 @@
       font-size: 0.7rem
     &__img-mail
       width: 48%
+  .phone
+    &__number
+      font-size: 1rem
+    &__comment
+      font-size: 1rem
+      margin: 1em auto
+      width: 300px
+  /* Trading Platforms */
+  .vertical-column
+    display: none
+  .horizontal-column
+    width: 320px
+    &__text-wrapper
+      display: block
+      margin: 0 auto
+      width: 62%
+    &__icon-list-item
+      width: 320px
+      margin: 0 0 30px 0
+    &__icon-list-item_no-margin
+      margin: 0
+  .footer
+    &__contact-wrapper
+      width: 100%
+    &__contact-social-wrapper
+      display: block
+      margin: 0
+    &__contact
+      width: 172px
+      margin: 0 auto
+    &__social-buttons
+      width: 204px
+      margin: 30px auto 0 auto
+  .contact-form
+    display: block
+    width: 230px
+    clear: both
+    margin: 30px auto 0 auto
+    &__message
+      display: block
+      margin: 30px 0 0 0
+    &__submit
+      display: block
+      float: none
