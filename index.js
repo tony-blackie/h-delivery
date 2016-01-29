@@ -19,7 +19,12 @@ $(document).ready(function() {
 				documFragment = document.createDocumentFragment(),
 				allSrcImg = [],
 				allTextUnderImg = [], i,
-				allElementsForSlider = [];
+				allElementsForSlider = [],
+				isThreeElementGallery,
+				windowWidth = $(window ).width();
+			var documFragFromArray;
+
+			isThreeElementGallery = windowWidth >= 750;
 
 			for (i = 0; i < $srcImg.length; i++) {
 				if ($srcImg.hasOwnProperty(i)) {
@@ -48,12 +53,21 @@ $(document).ready(function() {
 				figureElement.appendChild(textElement);
 				documFragment.appendChild(figureElement);
 
-				if (documFragment.children.length >= 3) {
-					var documFragFromArray = document.createElement("div");
+				if (isThreeElementGallery) {
+					if (documFragment.children.length >= 3) {
+						documFragFromArray = document.createElement("div");
+						documFragFromArray.appendChild(documFragment);
+						allElementsForSlider.push(documFragFromArray);
+						$(documFragment).children().remove();
+					}
+				} else {
+					documFragFromArray = document.createElement("div");
 					documFragFromArray.appendChild(documFragment);
 					allElementsForSlider.push(documFragFromArray);
 					$(documFragment).children().remove();
 				}
+
+
 			}
 			return allElementsForSlider;
 		}
