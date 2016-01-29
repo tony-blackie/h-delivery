@@ -21,7 +21,7 @@ $(document).ready(function() {
 				allTextUnderImg = [], i,
 				allElementsForSlider = [],
 				isThreeElementGallery,
-				windowWidth = $(window ).width();
+				windowWidth = $(window).width();
 			var documFragFromArray;
 
 			isThreeElementGallery = windowWidth >= 750;
@@ -66,8 +66,6 @@ $(document).ready(function() {
 					allElementsForSlider.push(documFragFromArray);
 					$(documFragment).children().remove();
 				}
-
-
 			}
 			return allElementsForSlider;
 		}
