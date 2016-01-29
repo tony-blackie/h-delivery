@@ -11,9 +11,28 @@ $(document).ready(function() {
 		}
 	});
 
-	function slider() {
-		function createElementSlider() {
-			var $srcImg = $(".about-us__img"),
+	function generateCarouselButtons(isThreeElementGallery, galleryLength) {
+		var $carouselButtonItem = $('.about-us__carousel-buttons-item');
+		var $carouselButtonWrapper = $('.about-us__carousel-buttons');
+		var
+				i,
+				documentFragment = document.createDocumentFragment();
+		debugger;
+		if(isThreeElementGallery) {
+			galleryLength = Math.floor( galleryLength / 3 );
+		}
+		for (i = 0; i < galleryLength; i++) {
+			$carouselButtonItem.clone()
+					.removeClass('about-us__carousel-buttons-item about-us__carousel-buttons-item0')
+					.addClass('about-us__carousel-buttons-item about-us__carousel-buttons-item' + (i + 1))
+					.appendTo(documentFragment);
+		}
+
+		$(documentFragment).appendTo($carouselButtonWrapper);
+	}
+
+	function createElementSlider() {
+		var $srcImg = $(".about-us__img"),
 				$textUnderImg = $(".about-us__text"),
 				$containerForImg = $(".about-us__icon-list"),
 				documFragment = document.createDocumentFragment(),
@@ -22,54 +41,58 @@ $(document).ready(function() {
 				allElementsForSlider = [],
 				isThreeElementGallery,
 				windowWidth = $(window).width();
-			var documFragFromArray;
+		var documFragFromArray;
 
-			isThreeElementGallery = windowWidth >= 750;
+		isThreeElementGallery = windowWidth >= 750;
 
-			for (i = 0; i < $srcImg.length; i++) {
-				if ($srcImg.hasOwnProperty(i)) {
-					allSrcImg.push($srcImg[i].getAttribute("src"));
-				}
+		for (i = 0; i < $srcImg.length; i++) {
+			if ($srcImg.hasOwnProperty(i)) {
+				allSrcImg.push($srcImg[i].getAttribute("src"));
 			}
-			for (i = 0; i < $textUnderImg.length; i++) {
-				if ($textUnderImg.hasOwnProperty(i)) {
-					allTextUnderImg.push($textUnderImg[i].innerHTML);
-				}
+		}
+		for (i = 0; i < $textUnderImg.length; i++) {
+			if ($textUnderImg.hasOwnProperty(i)) {
+				allTextUnderImg.push($textUnderImg[i].innerHTML);
 			}
-			$containerForImg.children().remove();
+		}
+		$containerForImg.children().remove();
 
-			for (i = 0; i < allSrcImg.length; i++) {
-				var figureElement = document.createElement("figure"),
+		for (i = 0; i < allSrcImg.length; i++) {
+			var figureElement = document.createElement("figure"),
 					imgElement = document.createElement("img"),
 					textElement = document.createElement("p");
 
-				figureElement.setAttribute("class", "about-us__icon-list-item");
-				imgElement.setAttribute("class", "about-us__img");
-				textElement.setAttribute("class", "about-us__text");
+			figureElement.setAttribute("class", "about-us__icon-list-item");
+			imgElement.setAttribute("class", "about-us__img");
+			textElement.setAttribute("class", "about-us__text");
 
-				imgElement.setAttribute("src", allSrcImg[i]);
-				textElement.innerHTML = allTextUnderImg[i];
-				figureElement.appendChild(imgElement);
-				figureElement.appendChild(textElement);
-				documFragment.appendChild(figureElement);
+			imgElement.setAttribute("src", allSrcImg[i]);
+			textElement.innerHTML = allTextUnderImg[i];
+			figureElement.appendChild(imgElement);
+			figureElement.appendChild(textElement);
+			documFragment.appendChild(figureElement);
 
-				if (isThreeElementGallery) {
-					if (documFragment.children.length >= 3) {
-						documFragFromArray = document.createElement("div");
-						documFragFromArray.appendChild(documFragment);
-						allElementsForSlider.push(documFragFromArray);
-						$(documFragment).children().remove();
-					}
-				} else {
+			if (isThreeElementGallery) {
+				if (documFragment.children.length >= 3) {
 					documFragFromArray = document.createElement("div");
 					documFragFromArray.appendChild(documFragment);
 					allElementsForSlider.push(documFragFromArray);
 					$(documFragment).children().remove();
 				}
+			} else {
+				documFragFromArray = document.createElement("div");
+				documFragFromArray.appendChild(documFragment);
+				allElementsForSlider.push(documFragFromArray);
+				$(documFragment).children().remove();
 			}
-			return allElementsForSlider;
 		}
 
+		generateCarouselButtons(isThreeElementGallery, $srcImg.length);
+
+		return allElementsForSlider;
+	}
+
+	function slider() {
 		var arrValue = createElementSlider(),
 			$containerForImg = $(".about-us__icon-list"),
 			timer,
