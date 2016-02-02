@@ -223,7 +223,8 @@
     height: 10px;
     border: 1px solid #333;
     border-radius: 10px 10px;
-    text-decoration: none; }
+    text-decoration: none;
+    margin: 0 1px; }
   .about-us__carousel-buttons-item_active {
     background-color: #2ca9c9; }
 
@@ -637,9 +638,14 @@
 @media screen and (max-width: 750px) {
   /* Landing */
   .about-us__icon-list-item {
-    padding: 0 30px 0 30px; }
+    display: inline-block;
+    width: 126px;
+    margin: 0;
+    padding: 0 62px 0 62px; }
   .about-us__img {
-    width: 100px; }
+    width: 122px; }
+  .about-us__carousel-buttons {
+    width: 140px; }
 
   .landing-text {
     position: static;
