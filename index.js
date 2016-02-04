@@ -19,7 +19,7 @@ $(document).ready(function() {
 				documentFragment = document.createDocumentFragment(),
 				item;
 		if(isThreeElementGallery) {
-			galleryLength = Math.floor( galleryLength / 3 ) - 1;
+			galleryLength = Math.floor( galleryLength / 3 ) - 1; // -1 cause we create first element separately
 		}
 		item = $('<div></div>' ).addClass('about-us__carousel-buttons-item');
 		for (i = 0; i < galleryLength; i++) {
