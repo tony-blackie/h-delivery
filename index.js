@@ -16,17 +16,19 @@ $(document).ready(function() {
 		var $carouselButtonWrapper = $('.about-us__carousel-buttons');
 		var
 				i,
-				documentFragment = document.createDocumentFragment();
-		debugger;
+				documentFragment = document.createDocumentFragment(),
+				item;
 		if(isThreeElementGallery) {
-			galleryLength = Math.floor( galleryLength / 3 );
+			galleryLength = Math.floor( galleryLength / 3 ) - 1;
 		}
+		item = $('<div></div>' ).addClass('about-us__carousel-buttons-item');
 		for (i = 0; i < galleryLength; i++) {
-			$carouselButtonItem.clone()
-					.removeClass('about-us__carousel-buttons-item about-us__carousel-buttons-item0')
-					.addClass('about-us__carousel-buttons-item about-us__carousel-buttons-item' + (i + 1))
+			item.clone()
+					.addClass('about-us__carousel-buttons-item' + (i + 1))
 					.appendTo(documentFragment);
 		}
+		item.addClass('about-us__carousel-buttons-item0 about-us__carousel-buttons-item_active' )
+				.prependTo(documentFragment);
 
 		$(documentFragment).appendTo($carouselButtonWrapper);
 	}
