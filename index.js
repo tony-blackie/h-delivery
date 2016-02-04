@@ -12,7 +12,6 @@ $(document).ready(function() {
 	});
 
 	function generateCarouselButtons(isThreeElementGallery, galleryLength) {
-		var $carouselButtonItem = $('.about-us__carousel-buttons-item');
 		var $carouselButtonWrapper = $('.about-us__carousel-buttons');
 		var
 				i,
