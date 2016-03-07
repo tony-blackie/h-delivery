@@ -1,144 +1,149 @@
 $(document).ready(function() {
-	var landing = $('.landing');
-	landing.height($(window).height());
+	initLandingHeight();
 	slider();
 	sliderCommentary();
 	scrollPage();
+});
 
-	$(window).on('resize', function() {
-		if($(window).height > 720) {
-			landing.height($(window).height());
-		}
-	});
+function initLandingHeight() {
+	var landing = $('.landing');
+	var windowHeight = $(window).height();
+	var landingTextHeight = $('.landing-text').height();
+	var landingHeaderHeight = $('.header').height();
+	var landingTextPadding = parseInt($('.title').css('padding-top'), 10);
+	var landingHeight = windowHeight > (landingTextHeight + landingHeaderHeight + landingTextPadding) ?
+			windowHeight : (landingTextHeight + landingHeaderHeight + landingTextPadding);
 
-	function generateCarouselButtons(isThreeElementGallery, galleryLength) {
-		var $carouselButtonItem = $('.about-us__carousel-buttons-item');
-		var $carouselButtonWrapper = $('.about-us__carousel-buttons');
-		var
-				i,
-				documentFragment = document.createDocumentFragment(),
-				item;
-		if(isThreeElementGallery) {
-			galleryLength = Math.floor( galleryLength / 3 ) - 1; // -1 cause we create first element separately
-		}
-		item = $('<div></div>' ).addClass('about-us__carousel-buttons-item');
-		for (i = 0; i < galleryLength; i++) {
-			item.clone()
-					.addClass('about-us__carousel-buttons-item' + (i + 1))
-					.appendTo(documentFragment);
-		}
-		item.addClass('about-us__carousel-buttons-item0 about-us__carousel-buttons-item_active' )
-				.prependTo(documentFragment);
+	$(landing).height(landingHeight);
+}
 
-		$(documentFragment).appendTo($carouselButtonWrapper);
+function generateCarouselButtons(isThreeElementGallery, galleryLength) {
+	var $carouselButtonWrapper = $('.about-us__carousel-buttons');
+	var
+			i,
+			documentFragment = document.createDocumentFragment(),
+			item;
+	if(isThreeElementGallery) {
+		galleryLength = Math.floor( galleryLength / 3 ) - 1; // -1 cause we create first element separately
 	}
+	item = $('<div></div>' ).addClass('about-us__carousel-buttons-item');
+	for (i = 0; i < galleryLength; i++) {
+		item.clone()
+				.addClass('about-us__carousel-buttons-item' + (i + 1))
+				.appendTo(documentFragment);
+	}
+	item.addClass('about-us__carousel-buttons-item0 about-us__carousel-buttons-item_active' )
+			.prependTo(documentFragment);
 
-	function createElementSlider() {
-		var $srcImg = $(".about-us__img"),
-				$textUnderImg = $(".about-us__text"),
-				$containerForImg = $(".about-us__icon-list"),
-				documFragment = document.createDocumentFragment(),
-				allSrcImg = [],
-				allTextUnderImg = [], i,
-				allElementsForSlider = [],
-				isThreeElementGallery,
-				windowWidth = $(window).width();
-		var documFragFromArray;
+	$(documentFragment).appendTo($carouselButtonWrapper);
+}
 
-		isThreeElementGallery = windowWidth >= 750;
+function createElementSlider() {
+	var $srcImg = $(".about-us__img"),
+			$textUnderImg = $(".about-us__text"),
+			$containerForImg = $(".about-us__icon-list"),
+			documFragment = document.createDocumentFragment(),
+			allSrcImg = [],
+			allTextUnderImg = [], i,
+			allElementsForSlider = [],
+			isThreeElementGallery,
+			windowWidth = $(window).width();
+	var documFragFromArray;
 
-		for (i = 0; i < $srcImg.length; i++) {
-			if ($srcImg.hasOwnProperty(i)) {
-				allSrcImg.push($srcImg[i].getAttribute("src"));
-			}
+	isThreeElementGallery = windowWidth >= 750;
+
+	for (i = 0; i < $srcImg.length; i++) {
+		if ($srcImg.hasOwnProperty(i)) {
+			allSrcImg.push($srcImg[i].getAttribute("src"));
 		}
-		for (i = 0; i < $textUnderImg.length; i++) {
-			if ($textUnderImg.hasOwnProperty(i)) {
-				allTextUnderImg.push($textUnderImg[i].innerHTML);
-			}
+	}
+	for (i = 0; i < $textUnderImg.length; i++) {
+		if ($textUnderImg.hasOwnProperty(i)) {
+			allTextUnderImg.push($textUnderImg[i].innerHTML);
 		}
-		$containerForImg.children().remove();
+	}
+	$containerForImg.children().remove();
 
-		for (i = 0; i < allSrcImg.length; i++) {
-			var figureElement = document.createElement("figure"),
-					imgElement = document.createElement("img"),
-					textElement = document.createElement("p");
+	for (i = 0; i < allSrcImg.length; i++) {
+		var figureElement = document.createElement("figure"),
+				imgElement = document.createElement("img"),
+				textElement = document.createElement("p");
 
-			figureElement.setAttribute("class", "about-us__icon-list-item");
-			imgElement.setAttribute("class", "about-us__img");
-			textElement.setAttribute("class", "about-us__text");
+		figureElement.setAttribute("class", "about-us__icon-list-item");
+		imgElement.setAttribute("class", "about-us__img");
+		textElement.setAttribute("class", "about-us__text");
 
-			imgElement.setAttribute("src", allSrcImg[i]);
-			textElement.innerHTML = allTextUnderImg[i];
-			figureElement.appendChild(imgElement);
-			figureElement.appendChild(textElement);
-			documFragment.appendChild(figureElement);
+		imgElement.setAttribute("src", allSrcImg[i]);
+		textElement.innerHTML = allTextUnderImg[i];
+		figureElement.appendChild(imgElement);
+		figureElement.appendChild(textElement);
+		documFragment.appendChild(figureElement);
 
-			if (isThreeElementGallery) {
-				if (documFragment.children.length >= 3) {
-					documFragFromArray = document.createElement("div");
-					documFragFromArray.appendChild(documFragment);
-					allElementsForSlider.push(documFragFromArray);
-					$(documFragment).children().remove();
-				}
-			} else {
+		if (isThreeElementGallery) {
+			if (documFragment.children.length >= 3) {
 				documFragFromArray = document.createElement("div");
 				documFragFromArray.appendChild(documFragment);
 				allElementsForSlider.push(documFragFromArray);
 				$(documFragment).children().remove();
 			}
+		} else {
+			documFragFromArray = document.createElement("div");
+			documFragFromArray.appendChild(documFragment);
+			allElementsForSlider.push(documFragFromArray);
+			$(documFragment).children().remove();
 		}
-
-		generateCarouselButtons(isThreeElementGallery, $srcImg.length);
-
-		return allElementsForSlider;
 	}
 
-	function slider() {
-		var arrValue = createElementSlider(),
+	generateCarouselButtons(isThreeElementGallery, $srcImg.length);
+
+	return allElementsForSlider;
+}
+
+function slider() {
+	var arrValue = createElementSlider(),
 			$containerForImg = $(".about-us__icon-list"),
 			timer,
 			timeForTimerMs = 3800,
 			valueNumberSliderItem = 0;
 
-		$containerForImg.append(arrValue[0]);
-		timer = setInterval(moveElements, timeForTimerMs);
-		$(".about-us__carousel-buttons-item").bind('click', movedItem);
+	$containerForImg.append(arrValue[0]);
+	timer = setInterval(moveElements, timeForTimerMs);
+	$(".about-us__carousel-buttons-item").bind('click', movedItem);
 
-		function moveElements() {
-			$containerForImg.children().remove();
-			$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
-					.removeClass("about-us__carousel-buttons-item_active");
-			if (valueNumberSliderItem == arrValue.length - 1) {
-				valueNumberSliderItem = -1;
-			}
-			valueNumberSliderItem++;
-			$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
-					.addClass("about-us__carousel-buttons-item_active");
-			$containerForImg.append(arrValue[valueNumberSliderItem]);
+	function moveElements() {
+		$containerForImg.children().remove();
+		$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
+				.removeClass("about-us__carousel-buttons-item_active");
+		if (valueNumberSliderItem == arrValue.length - 1) {
+			valueNumberSliderItem = -1;
 		}
-
-		function movedItem(event) {
-			var className = event.target.getAttribute("class"),
-				numberImage;
-			if (className.length > 65) {
-				return;
-			}
-			clearInterval(timer);
-			$containerForImg.children().remove();
-			$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
-					.removeClass("about-us__carousel-buttons-item_active");
-			numberImage = className.substring(63);
-			valueNumberSliderItem = numberImage;
-			$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
-					.addClass("about-us__carousel-buttons-item_active");
-			$containerForImg.append(arrValue[valueNumberSliderItem]);
-			timer = setInterval(moveElements, timeForTimerMs);
-		}
+		valueNumberSliderItem++;
+		$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
+				.addClass("about-us__carousel-buttons-item_active");
+		$containerForImg.append(arrValue[valueNumberSliderItem]);
 	}
 
-	function sliderCommentary() {
-		var $moveBlock = $(".comments__move-block"),
+	function movedItem(event) {
+		var className = event.target.getAttribute("class"),
+				numberImage;
+		if (className.length > 65) {
+			return;
+		}
+		clearInterval(timer);
+		$containerForImg.children().remove();
+		$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
+				.removeClass("about-us__carousel-buttons-item_active");
+		numberImage = className.substring(63);
+		valueNumberSliderItem = numberImage;
+		$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
+				.addClass("about-us__carousel-buttons-item_active");
+		$containerForImg.append(arrValue[valueNumberSliderItem]);
+		timer = setInterval(moveElements, timeForTimerMs);
+	}
+}
+
+function sliderCommentary() {
+	var $moveBlock = $(".comments__move-block"),
 			$prevBtn = $(".comments__arrow-prev"),
 			$nextBtn = $(".comments__arrow-next"),
 			widthContainerBlock = $(".comments__container-icon-list-item").width(),
@@ -149,64 +154,64 @@ $(document).ready(function() {
 			widthListItemForAnimate = widthContainerBlock / 3,
 			widthForAnimate = 0;
 
-		//$listItem.width(widthListItem);
-		$moveBlock.width(widthListItem * numberChildInMoveBlock + 100);
+	//$listItem.width(widthListItem);
+	$moveBlock.width(widthListItem * numberChildInMoveBlock + 100);
 
-		$nextBtn.bind('click', movedNext);
-		$prevBtn.bind("click", movedPrev);
+	$nextBtn.bind('click', movedNext);
+	$prevBtn.bind("click", movedPrev);
 
-		function movedNext () {
-			if(currentPositionSlider > numberChildInMoveBlock - 1) { return }
+	function movedNext () {
+		if(currentPositionSlider > numberChildInMoveBlock - 1) { return }
 
-			widthForAnimate -= widthListItemForAnimate;
-			$moveBlock.css({"transform": "translate(" + widthForAnimate + "px,0)",
-				"-webkit-transition": "translate(" + widthForAnimate + "px,0)",
-				"-moz-transition": "translate(" + widthForAnimate + "px,0)",
-				"-o-transition": "translate(" + widthForAnimate + "px,0)"
-			});
+		widthForAnimate -= widthListItemForAnimate;
+		$moveBlock.css({"transform": "translate(" + widthForAnimate + "px,0)",
+			"-webkit-transition": "translate(" + widthForAnimate + "px,0)",
+			"-moz-transition": "translate(" + widthForAnimate + "px,0)",
+			"-o-transition": "translate(" + widthForAnimate + "px,0)"
+		});
 
-			currentPositionSlider++;
+		currentPositionSlider++;
 
-			if(currentPositionSlider > numberChildInMoveBlock - 1) {
-				$nextBtn.addClass("comments__arrow-non-active");
-			} else {
-				$nextBtn.removeClass("comments__arrow-non-active");
-			}
-
-			if(currentPositionSlider !== 3) {
-				$prevBtn.removeClass("comments__arrow-non-active");
-			}
-
+		if(currentPositionSlider > numberChildInMoveBlock - 1) {
+			$nextBtn.addClass("comments__arrow-non-active");
+		} else {
+			$nextBtn.removeClass("comments__arrow-non-active");
 		}
 
-		function movedPrev () {
-			if(currentPositionSlider === 3) { return }
-
-			widthForAnimate +=widthListItemForAnimate;
-			$moveBlock.css({"transform": "translate(" + widthForAnimate + "px,0)",
-				"-webkit-transition": "translate(" + widthForAnimate + "px,0)",
-				"-moz-transition": "translate(" + widthForAnimate + "px,0)",
-				"-o-transition": "translate(" + widthForAnimate + "px,0)"
-			});
-
-			currentPositionSlider--;
-
-			if(currentPositionSlider === 3) {
-				$prevBtn.addClass("comments__arrow-non-active");
-			} else {
-				$prevBtn.removeClass("comments__arrow-non-active");
-			}
-
-			if(currentPositionSlider > numberChildInMoveBlock - 1) {
-				$nextBtn.addClass("comments__arrow-non-active");
-			} else {
-				$nextBtn.removeClass("comments__arrow-non-active");
-			}
+		if(currentPositionSlider !== 3) {
+			$prevBtn.removeClass("comments__arrow-non-active");
 		}
+
 	}
 
-	function scrollPage() {
-		var $aboutBtn = $(".nav__menu-item-about"),
+	function movedPrev () {
+		if(currentPositionSlider === 3) { return }
+
+		widthForAnimate +=widthListItemForAnimate;
+		$moveBlock.css({"transform": "translate(" + widthForAnimate + "px,0)",
+			"-webkit-transition": "translate(" + widthForAnimate + "px,0)",
+			"-moz-transition": "translate(" + widthForAnimate + "px,0)",
+			"-o-transition": "translate(" + widthForAnimate + "px,0)"
+		});
+
+		currentPositionSlider--;
+
+		if(currentPositionSlider === 3) {
+			$prevBtn.addClass("comments__arrow-non-active");
+		} else {
+			$prevBtn.removeClass("comments__arrow-non-active");
+		}
+
+		if(currentPositionSlider > numberChildInMoveBlock - 1) {
+			$nextBtn.addClass("comments__arrow-non-active");
+		} else {
+			$nextBtn.removeClass("comments__arrow-non-active");
+		}
+	}
+}
+
+function scrollPage() {
+	var $aboutBtn = $(".nav__menu-item-about"),
 			$aboutBlock = $(".about-us"),
 			$commentsBtn = $(".nav__menu-item-comments"),
 			$commentsBlock = $(".comments"),
@@ -215,30 +220,29 @@ $(document).ready(function() {
 			$contactsBtn = $(".nav__menu-item-contacts"),
 			$contactsBlock = $(".footer");
 
-		$aboutBtn.click(function() {
-			$('html, body').animate({
-				scrollTop: $aboutBlock.offset().top
-			}, 1000);
-			return false;
-		});
-		$commentsBtn.click(function() {
-			$('html, body').animate({
-				scrollTop: $commentsBlock.offset().top
-			}, 1000);
-			return false;
-		});
-		$tradingPlatformsBtn.click(function() {
-			var extraMargin = 5;
-			$('html, body').animate({
-				scrollTop: $tradingPlatformsBlock.offset().top + extraMargin
-			}, 1000);
-			return false;
-		});
-		$contactsBtn.click(function() {
-			$('html, body').animate({
-				scrollTop: $contactsBlock.offset().top
-			}, 1000);
-			return false;
-		});
-	}
-});
+	$aboutBtn.click(function() {
+		$('html, body').animate({
+			scrollTop: $aboutBlock.offset().top
+		}, 1000);
+		return false;
+	});
+	$commentsBtn.click(function() {
+		$('html, body').animate({
+			scrollTop: $commentsBlock.offset().top
+		}, 1000);
+		return false;
+	});
+	$tradingPlatformsBtn.click(function() {
+		var extraMargin = 5;
+		$('html, body').animate({
+			scrollTop: $tradingPlatformsBlock.offset().top + extraMargin
+		}, 1000);
+		return false;
+	});
+	$contactsBtn.click(function() {
+		$('html, body').animate({
+			scrollTop: $contactsBlock.offset().top
+		}, 1000);
+		return false;
+	});
+}
