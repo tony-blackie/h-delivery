@@ -15,6 +15,7 @@ function initLandingHeight() {
 			windowHeight : (landingTextHeight + landingHeaderHeight + landingTextPadding);
 
 	$(landing).height(landingHeight);
+
 }
 
 function generateCarouselButtons(isThreeElementGallery, galleryLength) {
