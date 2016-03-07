@@ -7,12 +7,14 @@ $(document).ready(function() {
 
 function initLandingHeight() {
 	var landing = $('.landing');
-	var windowHeight = $(window ).height();
-	var landingTextHeight = $('.landing-text' ).height();
-	var landingHeaderHeight = $('.header' ).height();
+	var windowHeight = $(window).height();
+	var landingTextHeight = $('.landing-text').height();
+	var landingHeaderHeight = $('.header').height();
+	var landingTextPadding = parseInt($('.title').css('padding-top'), 10);
+	var landingHeight = windowHeight > (landingTextHeight + landingHeaderHeight + landingTextPadding) ?
+			windowHeight : (landingTextHeight + landingHeaderHeight + landingTextPadding);
 
-	$(landing).height(windowHeight > (landingTextHeight + landingHeaderHeight) ?
-			windowHeight : (landingTextHeight + landingHeaderHeight));
+	$(landing).height(landingHeight);
 }
 
 function generateCarouselButtons(isThreeElementGallery, galleryLength) {
