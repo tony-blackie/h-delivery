@@ -4,6 +4,9 @@
 @font-face {
   font-family: openSansLight;
   src: url(Font/OpenSans-Light.ttf); }
+h1 {
+  margin: 0; }
+
 .landing {
   width: 100%;
   height: 1000px;
@@ -88,16 +91,13 @@
     cursor: pointer; }
 
 .landing-text {
-  text-align: center;
-  position: relative;
-  top: 35%;
-  transform: translateY(-50%); }
+  text-align: center; }
 
 .title {
   font-family: openSansRegular;
-  text-align: center; }
+  text-align: center;
+  padding-top: 58px; }
   .title__header {
-    margin-top: 58px;
     margin-left: 0.41754%;
     text-align: center;
     font-family: openSansRegular;
