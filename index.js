@@ -12,39 +12,40 @@ $(document).ready(function() {
 	});
 
 	function generateCarouselButtons(isThreeElementGallery, galleryLength) {
+		var $carouselButtonItem = $('.about-us__carousel-buttons-item');
 		var $carouselButtonWrapper = $('.about-us__carousel-buttons');
 		var
-				i,
-				documentFragment = document.createDocumentFragment(),
-				item;
+			i,
+			documentFragment = document.createDocumentFragment(),
+			item;
 		if(isThreeElementGallery) {
 			galleryLength = Math.floor( galleryLength / 3 ) - 1; // -1 cause we create first element separately
 		}
 		item = $('<div></div>' ).addClass('about-us__carousel-buttons-item');
 		for (i = 0; i < galleryLength; i++) {
 			item.clone()
-					.addClass('about-us__carousel-buttons-item' + (i + 1))
-					.appendTo(documentFragment);
+				.addClass('about-us__carousel-buttons-item' + (i + 1))
+				.appendTo(documentFragment);
 		}
 		item.addClass('about-us__carousel-buttons-item0 about-us__carousel-buttons-item_active' )
-				.prependTo(documentFragment);
+			.prependTo(documentFragment);
 
 		$(documentFragment).appendTo($carouselButtonWrapper);
 	}
 
-	function createElementSlider(isBigSlider) {
+	function createElementSlider() {
 		var $srcImg = $(".about-us__img"),
-				$textUnderImg = $(".about-us__text"),
-				$containerForImg = $(".about-us__icon-list"),
-				documFragment = document.createDocumentFragment(),
-				allSrcImg = [],
-				allTextUnderImg = [], i,
-				allElementsForSlider = [],
-				isThreeElementGallery;
-
+			$textUnderImg = $(".about-us__text"),
+			$containerForImg = $(".about-us__icon-list"),
+			documFragment = document.createDocumentFragment(),
+			allSrcImg = [],
+			allTextUnderImg = [], i,
+			allElementsForSlider = [],
+			isThreeElementGallery,
+			windowWidth = $(window).width();
 		var documFragFromArray;
 
-		isThreeElementGallery = isBigSlider;
+		isThreeElementGallery = windowWidth >= 750;
 
 		for (i = 0; i < $srcImg.length; i++) {
 			if ($srcImg.hasOwnProperty(i)) {
@@ -60,8 +61,8 @@ $(document).ready(function() {
 
 		for (i = 0; i < allSrcImg.length; i++) {
 			var figureElement = document.createElement("figure"),
-					imgElement = document.createElement("img"),
-					textElement = document.createElement("p");
+				imgElement = document.createElement("img"),
+				textElement = document.createElement("p");
 
 			figureElement.setAttribute("class", "about-us__icon-list-item");
 			imgElement.setAttribute("class", "about-us__img");
@@ -94,31 +95,27 @@ $(document).ready(function() {
 	}
 
 	function slider() {
-		var smallSliderElements = createElementSlider(false),
-			bigSliderElements = createElementSlider(true),
+		var arrValue = createElementSlider(),
 			$containerForImg = $(".about-us__icon-list"),
-			timerSmallSlider,
-			timerBigSlider,
+			timer,
 			timeForTimerMs = 3800,
 			valueNumberSliderItem = 0;
 
-		$containerForImg.append(smallSliderElements[0]);
-		timerSmallSlider = setInterval(moveElements(false), timeForTimerMs);
-		timerBigSlider = setInterval(moveElements(true), timeForTimerMs);
+		$containerForImg.append(arrValue[0]);
+		timer = setInterval(moveElements, timeForTimerMs);
 		$(".about-us__carousel-buttons-item").bind('click', movedItem);
 
-		function moveElements(isBigSlider) {
-			var sliderType = isBigSlider ? '.about-us__slider-wrapper_big-slider' : 'about-us__slider-wrapper_small-slider';
+		function moveElements() {
 			$containerForImg.children().remove();
-			$(sliderType + ".about-us__carousel-buttons-item" + valueNumberSliderItem)
-					.removeClass("about-us__carousel-buttons-item_active");
-			if (valueNumberSliderItem == smallSliderElements.length - 1) {
+			$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
+				.removeClass("about-us__carousel-buttons-item_active");
+			if (valueNumberSliderItem == arrValue.length - 1) {
 				valueNumberSliderItem = -1;
 			}
 			valueNumberSliderItem++;
-			$(sliderType + ".about-us__carousel-buttons-item" + valueNumberSliderItem)
-					.addClass("about-us__carousel-buttons-item_active");
-			$containerForImg.append(smallSliderElements[valueNumberSliderItem]);
+			$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
+				.addClass("about-us__carousel-buttons-item_active");
+			$containerForImg.append(arrValue[valueNumberSliderItem]);
 		}
 
 		function movedItem(event) {
@@ -127,18 +124,16 @@ $(document).ready(function() {
 			if (className.length > 65) {
 				return;
 			}
-			clearInterval(timerSmallSlider);
-			clearInterval(timerBigSlider);
+			clearInterval(timer);
 			$containerForImg.children().remove();
 			$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
-					.removeClass("about-us__carousel-buttons-item_active");
+				.removeClass("about-us__carousel-buttons-item_active");
 			numberImage = className.substring(63);
 			valueNumberSliderItem = numberImage;
 			$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
-					.addClass("about-us__carousel-buttons-item_active");
-			$containerForImg.append(smallSliderElements[valueNumberSliderItem]);
-			timerSmallSlider = setInterval(moveElements(false), timeForTimerMs);
-			timerBigSlider = setInterval(moveElements(true), timeForTimerMs);
+				.addClass("about-us__carousel-buttons-item_active");
+			$containerForImg.append(arrValue[valueNumberSliderItem]);
+			timer = setInterval(moveElements, timeForTimerMs);
 		}
 	}
 
