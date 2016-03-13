@@ -43,7 +43,7 @@ function createElementSlider() {
 	var $srcImg = $(".about-us__img"),
 			$textUnderImg = $(".about-us__text"),
 			$containerForImg = $(".about-us__icon-list"),
-			documFragment = document.createDocumentFragment(),
+			documFragment = $('<div></div>'),
 			allSrcImg = [],
 			allTextUnderImg = [], i,
 			allElementsForSlider = [],
@@ -66,30 +66,30 @@ function createElementSlider() {
 	$containerForImg.children().remove();
 
 	for (i = 0; i < allSrcImg.length; i++) {
-		var figureElement = document.createElement("figure"),
-				imgElement = document.createElement("img"),
-				textElement = document.createElement("p");
+		var figureElement = $('<figure></figure>'),
+				imgElement = $('<img>'),
+				textElement = $('<p></p>');
 
-		figureElement.setAttribute("class", "about-us__icon-list-item");
-		imgElement.setAttribute("class", "about-us__img");
-		textElement.setAttribute("class", "about-us__text");
+		figureElement.addClass("about-us__icon-list-item");
+		imgElement.addClass("about-us__img");
+		textElement.addClass("about-us__text");
 
-		imgElement.setAttribute("src", allSrcImg[i]);
-		textElement.innerHTML = allTextUnderImg[i];
-		figureElement.appendChild(imgElement);
-		figureElement.appendChild(textElement);
-		documFragment.appendChild(figureElement);
+		imgElement.attr("src", allSrcImg[i]);
+		textElement.html(allTextUnderImg[i]);
+		figureElement.append(imgElement);
+		figureElement.append(textElement);
+		documFragment.append(figureElement);
 
 		if (isThreeElementGallery) {
-			if (documFragment.children.length >= 3) {
-				documFragFromArray = document.createElement("div");
-				documFragFromArray.appendChild(documFragment);
-				allElementsForSlider.push(documFragFromArray);
+			if (documFragment.children().length >= 3) {
+				documFragFromArray = $("<div></div>");
+				documFragFromArray.append(documFragment.children());
+				allElementsForSlider.push(documFragFromArray.children());
 				$(documFragment).children().remove();
 			}
 		} else {
-			documFragFromArray = document.createElement("div");
-			documFragFromArray.appendChild(documFragment);
+			documFragFromArray = $("<div></div>");
+			documFragFromArray.append(documFragment);
 			allElementsForSlider.push(documFragFromArray);
 			$(documFragment).children().remove();
 		}
@@ -158,8 +158,8 @@ function sliderCommentary() {
 	//$listItem.width(widthListItem);
 	$moveBlock.width(widthListItem * numberChildInMoveBlock + 100);
 
-	$nextBtn.bind('click', movedNext);
-	$prevBtn.bind("click", movedPrev);
+	$nextBtn.on('click', movedNext);
+	$prevBtn.on("click", movedPrev);
 
 	function movedNext () {
 		if(currentPositionSlider > numberChildInMoveBlock - 1) { return }
