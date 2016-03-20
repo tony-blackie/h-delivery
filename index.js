@@ -51,7 +51,7 @@ function createElementSlider() {
 			windowWidth = $(window).width();
 	var documFragFromArray;
 
-	isThreeElementGallery = windowWidth >= 750;
+	isThreeElementGallery = true;
 
 	for (i = 0; i < $srcImg.length; i++) {
 		if ($srcImg.hasOwnProperty(i)) {
