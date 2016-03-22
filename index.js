@@ -222,14 +222,16 @@ function scrollPage() {
 			$contactsBlock = $(".footer");
 
 	$aboutBtn.click(function() {
+		var extraMargin = 5;
 		$('html, body').animate({
-			scrollTop: $aboutBlock.offset().top
+			scrollTop: $aboutBlock.offset().top + extraMargin
 		}, 1000);
 		return false;
 	});
 	$commentsBtn.click(function() {
+		var extraMargin = 5;
 		$('html, body').animate({
-			scrollTop: $commentsBlock.offset().top
+			scrollTop: $commentsBlock.offset().top + extraMargin
 		}, 1000);
 		return false;
 	});
