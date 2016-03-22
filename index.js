@@ -213,6 +213,7 @@ function sliderCommentary() {
 
 function scrollPage() {
 	var $aboutBtn = $(".nav__menu-item-about"),
+			$landingButton = $(".landing__button"),
 			$aboutBlock = $(".about-us"),
 			$commentsBtn = $(".nav__menu-item-comments"),
 			$commentsBlock = $(".comments"),
@@ -222,6 +223,13 @@ function scrollPage() {
 			$contactsBlock = $(".footer");
 
 	$aboutBtn.click(function() {
+		var extraMargin = 5;
+		$('html, body').animate({
+			scrollTop: $aboutBlock.offset().top + extraMargin
+		}, 1000);
+		return false;
+	});
+	$landingButton.click(function() {
 		var extraMargin = 5;
 		$('html, body').animate({
 			scrollTop: $aboutBlock.offset().top + extraMargin
