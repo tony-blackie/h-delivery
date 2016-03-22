@@ -4,6 +4,9 @@
 @font-face {
   font-family: openSansLight;
   src: url(font/OpenSans-Light.ttf); }
+.wrapper {
+  min-width: 1024px; }
+
 .landing {
   width: 100%;
   height: 1000px;
@@ -615,107 +618,5 @@
   html {
     font-size: 1.3rem;
     /* Tablet */ } }
-@media screen and (min-width: 751px) and (max-width: 1030px) {
-  html {
-    font-size: 0.895rem; }
-
-  .nav__menu-item {
-    margin-right: 12px; }
-
-  .header__social {
-    margin-left: 10px; }
-
-  .landing-text {
-    position: static;
-    transform: none; } }
-@media screen and (min-width: 751px) and (max-width: 800px) {
-  .about-us__icon-list-item {
-    padding: 0 30px 0 30px; }
-  .about-us__img {
-    width: 100px; }
-
-  /* Mobile */ }
-@media screen and (max-width: 750px) {
-  /* Landing */
-  .about-us__icon-list-item {
-    display: inline-block;
-    width: 126px;
-    margin: 0;
-    padding: 0 62px 0 62px; }
-  .about-us__img {
-    width: 122px; }
-  .about-us__carousel-buttons {
-    width: 140px; }
-
-  .landing-text {
-    position: static;
-    transform: none;
-    top: 0;
-    margin-top: 30px; }
-
-  .nav {
-    display: none; }
-    .nav__menu-item {
-      margin-right: 12px; }
-
-  .title__header {
-    font-size: 1.2rem;
-    margin-top: 0; }
-
-  .landing-icons__item {
-    margin: 0 10px 0 0;
-    vertical-align: top; }
-  .landing-icons__text {
-    width: 65px;
-    font-size: 0.7rem; }
-  .landing-icons__img-mail {
-    width: 48%; }
-
-  .phone__number {
-    font-size: 1rem; }
-  .phone__comment {
-    font-size: 1rem;
-    margin: 1em auto;
-    width: 300px; }
-
-  /* Trading Platforms */
-  .vertical-column {
-    display: none; }
-
-  .horizontal-column {
-    width: 320px; }
-    .horizontal-column__text-wrapper {
-      display: block;
-      margin: 0 auto;
-      width: 62%; }
-    .horizontal-column__icon-list-item {
-      width: 320px;
-      margin: 0 0 30px 0; }
-    .horizontal-column__icon-list-item_no-margin {
-      margin: 0; }
-
-  .footer__contact-wrapper {
-    width: 100%; }
-  .footer__contact-social-wrapper {
-    display: block;
-    margin: 0; }
-  .footer__contact {
-    width: 172px;
-    margin: 0 auto; }
-  .footer__social-buttons {
-    width: 204px;
-    margin: 30px auto 0 auto; }
-
-  .contact-form {
-    display: block;
-    width: 230px;
-    clear: both;
-    margin: 30px auto 0 auto; }
-    .contact-form__message {
-      display: block;
-      margin: 30px 0 0 0; }
-    .contact-form__submit {
-      display: block;
-      float: none; } }
 
 /*# sourceMappingURL=index.css.map */
