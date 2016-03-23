@@ -9,6 +9,8 @@
   min-width: 1024px
 
 .landing
+  display: flex
+  flex-direction: column
   width: 100%
   height: 1000px
   background-image: url(img/background_landing2_01.jpg)
@@ -38,6 +40,7 @@
       color: #FFF
 
 .header
+  order: 1
   margin: 0 auto
   text-align: center
   &__logo-link
@@ -94,10 +97,8 @@
     cursor: pointer
 
 .landing-text
+  order: 2
   text-align: center
-  position: relative
-  top: 35%
-  transform: translateY(-50%)
 
 .title
   font-family: openSansRegular
@@ -458,8 +459,6 @@
     -moz-transform-style: preserve-3d
     transform-style: preserve-3d
     margin: 0 auto
-    //top: 35%
-    //transform: translateY(-50%)
   &__title
     padding-top: 45px
     font-size: 1.5rem
@@ -617,7 +616,7 @@
 @media screen and (min-width: 851px) and (max-width: 1499px)
   html
     font-size: 1rem
-@media screen and (min-width: 1400px)
+@media screen and (min-width: 1500px)
   html
     font-size: 1.3rem
     /* Tablet */

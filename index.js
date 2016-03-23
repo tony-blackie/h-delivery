@@ -3,7 +3,19 @@ $(document).ready(function() {
 	slider();
 	sliderCommentary();
 	scrollPage();
+	resizeLanding();
 });
+
+function resizeLanding() {
+	$(window).on('resize', function() {
+		var $landing = $('.landing');
+		var windowHeight = $(window).height();
+		if(windowHeight < 670) {
+			windowHeight = 670;
+		}
+		$landing.height(windowHeight);
+	});
+}
 
 function initLandingHeight() {
 	var landing = $('.landing');
@@ -13,7 +25,9 @@ function initLandingHeight() {
 	var landingTextPadding = parseInt($('.title').css('padding-top'), 10);
 	var landingHeight = windowHeight > (landingTextHeight + landingHeaderHeight + landingTextPadding) ?
 			windowHeight : (landingTextHeight + landingHeaderHeight + landingTextPadding);
-
+	if(landingHeight < 670) {
+		landingHeight = 670;
+	}
 	$(landing).height(landingHeight);
 
 }
