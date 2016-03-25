@@ -155,9 +155,13 @@
     &_no-margin
       margin-right: 0
   &__img-wrapper
-    display: inline-block
+    display: flex
+    height: 75px
     text-align: center
     width: 100%
+    flex-direction: column
+    align-items: center
+    justify-content: center
   &__arrow-container
     display: inline-block
     width: 12px
@@ -175,11 +179,8 @@
     vertical-align: middle
   &__img-mail
     width: 67%
-    margin: 0 0 12px 0
-    vertical-align: middle
   &__img-box
     width: 36%
-    vertical-align: middle
   &__text
     font-family: openSansRegular
     font-size: 1rem
