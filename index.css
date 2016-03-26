@@ -213,15 +213,18 @@
     margin: 32px 0 0 10px; }
   .about-us__icon-list-item {
     display: inline-block;
-    width: 126px;
+    width: 170px;
     margin: 0;
-    padding: 0 62px 0 62px; }
+    padding: 0 62px 0 62px;
+    vertical-align: top; }
   .about-us__img {
     width: 122px; }
   .about-us__text {
+    display: inline-block;
     font-size: 1rem;
     padding: 6px 0 0 0;
-    opacity: 0.7; }
+    opacity: 0.7;
+    height: 110px; }
   .about-us__carousel-buttons {
     width: 60px;
     margin: 28px auto;
