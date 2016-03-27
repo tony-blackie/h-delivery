@@ -123,7 +123,7 @@ function slider() {
 
 	$containerForImg.append(arrValue[0]);
 	timer = setInterval(moveElements, timeForTimerMs);
-	$(".about-us__carousel-buttons-item").bind('click', movedItem);
+	$(".about-us__carousel-buttons-item").on('click', movedItem);
 
 	function moveElements() {
 		$containerForImg.children().remove();
@@ -161,10 +161,10 @@ function sliderCommentary() {
 	var $moveBlock = $(".comments__move-block");
 	var $prevBtn = $(".comments__arrow-prev");
 	var $nextBtn = $(".comments__arrow-next");
-	var widthContainerBlock = $(".comments__container-icon-list-item").width();
+	var widthContainerBlock = 930; //$(".comments__container-icon-list-item").width()
 	var $listItem = $(".comments__icon-list-item");
-	var widthListItem = $listItem.width();
 	var listItemPadding = 10;
+	var widthListItem = $listItem.width() + listItemPadding;
 	var numberChildInMoveBlock = $moveBlock.children().length;
 	var currentPositionSlider = 3;
 	var widthListItemForAnimate = widthContainerBlock;
@@ -173,7 +173,7 @@ function sliderCommentary() {
 	//$listItem.width(widthListItem);
 	$moveBlock.width(widthListItem * numberChildInMoveBlock + 100);
 
-	$nextBtn.on('click', movedNext);
+	$nextBtn.on("click", movedNext);
 	$prevBtn.on("click", movedPrev);
 
 	function movedNext () {
@@ -194,7 +194,7 @@ function sliderCommentary() {
 			$nextBtn.removeClass("comments__arrow-non-active");
 		}
 
-		if(currentPositionSlider !== 3) {
+		if(currentPositionSlider < 2) {
 			$prevBtn.removeClass("comments__arrow-non-active");
 		}
 
