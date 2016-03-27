@@ -166,9 +166,10 @@ function sliderCommentary() {
 	var listItemPadding = 10;
 	var widthListItem = $listItem.width() + listItemPadding;
 	var numberChildInMoveBlock = $moveBlock.children().length;
-	var currentPositionSlider = 3;
+	var currentPositionSlider = 1;
 	var widthListItemForAnimate = widthContainerBlock;
 	var widthForAnimate = 0;
+	var sliderEndingPosition = Math.ceil(numberChildInMoveBlock / 3);
 
 	//$listItem.width(widthListItem);
 	$moveBlock.width(widthListItem * numberChildInMoveBlock + 100);
@@ -177,7 +178,7 @@ function sliderCommentary() {
 	$prevBtn.on("click", movedPrev);
 
 	function movedNext () {
-		if(currentPositionSlider > numberChildInMoveBlock - 1) { return }
+		if(currentPositionSlider >= sliderEndingPosition) { return }
 
 		widthForAnimate -= widthListItemForAnimate;
 		$moveBlock.css({"transform": "translate(" + widthForAnimate + "px,0)",
@@ -188,22 +189,22 @@ function sliderCommentary() {
 
 		currentPositionSlider++;
 
-		if(currentPositionSlider > numberChildInMoveBlock - 1) {
+		if(currentPositionSlider === sliderEndingPosition) {
 			$nextBtn.addClass("comments__arrow-non-active");
 		} else {
 			$nextBtn.removeClass("comments__arrow-non-active");
 		}
 
-		if(currentPositionSlider < 2) {
-			$prevBtn.removeClass("comments__arrow-non-active");
-		}
+		//if(currentPositionSlider < Math.ceil(numberChildInMoveBlock / 3)) {
+		//	$prevBtn.removeClass("comments__arrow-non-active");
+		//}
 
 	}
 
 	function movedPrev () {
-		if(currentPositionSlider === 3) { return }
+		if(currentPositionSlider === 1) { return }
 
-		widthForAnimate +=widthListItemForAnimate;
+		widthForAnimate += widthListItemForAnimate;
 		$moveBlock.css({"transform": "translate(" + widthForAnimate + "px,0)",
 			"-webkit-transition": "translate(" + widthForAnimate + "px,0)",
 			"-moz-transition": "translate(" + widthForAnimate + "px,0)",
@@ -212,17 +213,17 @@ function sliderCommentary() {
 
 		currentPositionSlider--;
 
-		if(currentPositionSlider === 3) {
+		if(currentPositionSlider === 1) {
 			$prevBtn.addClass("comments__arrow-non-active");
 		} else {
 			$prevBtn.removeClass("comments__arrow-non-active");
 		}
-
-		if(currentPositionSlider > numberChildInMoveBlock - 1) {
-			$nextBtn.addClass("comments__arrow-non-active");
-		} else {
-			$nextBtn.removeClass("comments__arrow-non-active");
-		}
+		//
+		//if(currentPositionSlider > Math.ceil(numberChildInMoveBlock / 3)) {
+		//	$nextBtn.addClass("comments__arrow-non-active");
+		//} else {
+		//	$nextBtn.removeClass("comments__arrow-non-active");
+		//}
 	}
 }
 
