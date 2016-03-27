@@ -158,16 +158,17 @@ function slider() {
 }
 
 function sliderCommentary() {
-	var $moveBlock = $(".comments__move-block"),
-			$prevBtn = $(".comments__arrow-prev"),
-			$nextBtn = $(".comments__arrow-next"),
-			widthContainerBlock = $(".comments__container-icon-list-item").width(),
-			$listItem = $(".comments__icon-list-item"),
-			widthListItem = $listItem.width(),
-			numberChildInMoveBlock = $moveBlock.children().length,
-			currentPositionSlider = 3,
-			widthListItemForAnimate = widthContainerBlock / 3,
-			widthForAnimate = 0;
+	var $moveBlock = $(".comments__move-block");
+	var $prevBtn = $(".comments__arrow-prev");
+	var $nextBtn = $(".comments__arrow-next");
+	var widthContainerBlock = $(".comments__container-icon-list-item").width();
+	var $listItem = $(".comments__icon-list-item");
+	var widthListItem = $listItem.width();
+	var listItemPadding = 10;
+	var numberChildInMoveBlock = $moveBlock.children().length;
+	var currentPositionSlider = 3;
+	var widthListItemForAnimate = widthContainerBlock;
+	var widthForAnimate = 0;
 
 	//$listItem.width(widthListItem);
 	$moveBlock.width(widthListItem * numberChildInMoveBlock + 100);
