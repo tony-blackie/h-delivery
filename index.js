@@ -171,7 +171,6 @@ function sliderCommentary() {
 	var widthForAnimate = 0;
 	var sliderEndingPosition = Math.ceil(numberChildInMoveBlock / 3);
 
-	//$listItem.width(widthListItem);
 	$moveBlock.width(widthListItem * numberChildInMoveBlock + 100);
 
 	$nextBtn.on("click", movedNext);
@@ -194,11 +193,6 @@ function sliderCommentary() {
 		} else {
 			$nextBtn.removeClass("comments__arrow-non-active");
 		}
-
-		//if(currentPositionSlider < Math.ceil(numberChildInMoveBlock / 3)) {
-		//	$prevBtn.removeClass("comments__arrow-non-active");
-		//}
-
 	}
 
 	function movedPrev () {
@@ -218,12 +212,6 @@ function sliderCommentary() {
 		} else {
 			$prevBtn.removeClass("comments__arrow-non-active");
 		}
-		//
-		//if(currentPositionSlider > Math.ceil(numberChildInMoveBlock / 3)) {
-		//	$nextBtn.addClass("comments__arrow-non-active");
-		//} else {
-		//	$nextBtn.removeClass("comments__arrow-non-active");
-		//}
 	}
 }
 
