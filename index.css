@@ -173,15 +173,13 @@
     position: absolute;
     top: 35%;
     width: 8px; }
-  .landing-icons__img {
-    width: 48%; }
   .landing-icons__img-done {
-    width: 48%;
+    width: 66px;
     vertical-align: middle; }
   .landing-icons__img-mail {
-    width: 67%; }
+    width: 65px; }
   .landing-icons__img-box {
-    width: 36%; }
+    width: 54px; }
   .landing-icons__text {
     font-family: openSansRegular;
     font-size: 1rem;
