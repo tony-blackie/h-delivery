@@ -257,8 +257,6 @@
     color: #fff;
     font-family: openSansRegular;
     margin: 43px 0 0 0; }
-  .comments__title {
-    opacity: 0.7; }
   .comments__icon-list {
     position: relative;
     text-align: center;
@@ -272,13 +270,11 @@
   .comments__img {
     width: 122px; }
   .comments__text {
-    opacity: 0.7;
     font-size: 0.825rem;
     padding: 6px 0 0 0; }
   .comments__commenter-name {
     font-size: 0.825rem;
-    font-weight: bold;
-    opacity: 0.7; }
+    font-weight: bold; }
   .comments__button {
     margin: 0 auto;
     width: 186px;
@@ -294,8 +290,7 @@
     font-size: 0.8125rem;
     line-height: 31px;
     text-decoration: none;
-    color: #fff;
-    opacity: 0.7; }
+    color: #fff; }
     .comments__button-item:hover {
       background-color: #2ca9c9; }
   .comments__arrow {
