@@ -220,12 +220,13 @@
   .about-us__text {
     display: inline-block;
     font-size: 1rem;
-    padding: 6px 0 0 0;
+    padding: 20px 0 0 0;
     opacity: 0.7;
-    height: 110px; }
+    min-height: 110px;
+    margin: 0; }
   .about-us__carousel-buttons {
     width: 60px;
-    margin: 28px auto;
+    margin: 10px auto 28px auto;
     padding: 0 0 0 12px; }
   .about-us__carousel-buttons-item {
     display: inline-block;
@@ -627,7 +628,11 @@
     font-size: 1rem; } }
 @media screen and (min-width: 1500px) {
   html {
-    font-size: 1.3rem;
-    /* Tablet */ } }
+    font-size: 1.3rem; }
+
+  .about-us {
+    /* Tablet */ }
+    .about-us__text {
+      min-height: 185px; } }
 
 /*# sourceMappingURL=index.css.map */
