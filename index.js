@@ -118,9 +118,24 @@ function createElementSlider() {
 function showExtraPlatforms() {
 	var $moreButton = $('.js-trading-platforms__button-item');
 	var $extraTradingPlatforms = $('.js-extra-trading-platforms');
-	$moreButton.on('click', function() {
-		$extraTradingPlatforms.toggleClass('extra-trading-platforms_visible');
+	var $extraTradingPlatformsHeight = 720;	//hardcoded, because at load it's in display: none
+	$moreButton.on('click', function () {
+		if(!$extraTradingPlatforms.hasClass('extra-trading-platforms_visible')) {
+			$extraTradingPlatforms.addClass('extra-trading-platforms_visible');
+			$extraTradingPlatforms.animate(
+				{
+					height: $extraTradingPlatformsHeight
+				}, 500);
+		} else {
+			$extraTradingPlatforms.animate(
+				{
+					height: 0
+				}, 500, function() {
+					$extraTradingPlatforms.removeClass('extra-trading-platforms_visible');
+				});
+		}
 	});
+
 }
 
 function slider() {

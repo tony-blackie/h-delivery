@@ -525,7 +525,9 @@
     text-align: left; }
 
 .extra-trading-platforms_visible {
-  display: inline-block; }
+  display: inline-block;
+  overflow: hidden;
+  height: 1px; }
 
 .footer {
   width: 100%;
