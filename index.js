@@ -4,6 +4,7 @@ $(document).ready(function() {
 	sliderCommentary();
 	scrollPage();
 	resizeLanding();
+	showExtraPlatforms();
 });
 
 function resizeLanding() {
@@ -112,6 +113,14 @@ function createElementSlider() {
 	generateCarouselButtons(isThreeElementGallery, $srcImg.length);
 
 	return allElementsForSlider;
+}
+
+function showExtraPlatforms() {
+	var $moreButton = $('.js-trading-platforms__button-item');
+	var $extraTradingPlatforms = $('.js-extra-trading-platforms');
+	$moreButton.on('click', function() {
+		$extraTradingPlatforms.toggleClass('extra-trading-platforms_visible');
+	});
 }
 
 function slider() {
