@@ -1,0 +1,179 @@
+.wrapper
+  min-width: 1024px
+
+.landing
+  display: flex
+  flex-direction: column
+  width: 100%
+  height: 1000px
+  background-image: url(../../img/land_back_01.jpg)
+  background-size: cover
+  -webkit-transform-style: preserve-3d
+  -moz-transform-style: preserve-3d
+  transform-style: preserve-3d
+  &__button
+    margin: 0 auto
+    padding-left: 24px
+    width: 186px
+    height: 50px
+    text-align: center
+  &__button-item
+    display: block
+    height: 31px
+    border: 1px solid #333333
+    border-radius: 3px 3px
+    text-align: center
+    margin-top: 33px
+    font-size: 0.8125rem
+    line-height: 31px
+    text-decoration: none
+    color: #000
+    &:hover
+      background-color: #2ca9c9
+      color: #FFF
+
+.header
+  order: 1
+  margin: 0 auto
+  text-align: center
+  &__logo-link
+    display: inline-block
+    text-decoration: none
+    vertical-align: bottom
+  &__logo
+    display: inline-block
+    margin-top: 11px
+    width: 128px // TODO: svg!
+  &__social
+    display: inline-block
+    margin-top: 22px
+    margin-left: 34px
+    vertical-align: bottom
+  &__social-item
+    display: inline-block
+    text-decoration: none
+    width: 40px
+    margin: 0
+    text-align: left
+  &__social-item-img
+    width: 68.75% // 22px / 33px
+    margin-top: 17px
+    margin-left: 0.490196078431% // 4px / 816px
+
+.nav
+  font-family: openSansRegular
+  display: inline-block
+  margin-top: 32px
+  margin-left: 40px
+  vertical-align: bottom
+  &__menu
+    margin: 0
+    font-family: openSansRegular
+    font-size: 1rem
+    opacity: 0.9
+    padding: 0
+  &__menu-item
+    display: inline-block
+    margin: 0 27px 0 0
+    &:hover
+      line-height: 32px
+      border-top: 2px solid #2ca9c9
+    &_last
+      margin-right: 0
+  &__menu-item_active
+    line-height: 32px
+    border-top: 2px solid #2ca9c9
+  &__menu-item-link
+    text-decoration: none
+    color: #000
+  .nav__menu-item-link:hover
+    cursor: pointer
+
+.landing-text
+  order: 2
+  text-align: center
+
+.title
+  font-family: openSansRegular
+  text-align: center
+  &__header
+    margin-top: 58px
+    margin-left: 0.417536534447%
+    text-align: center
+    font-family: openSansRegular
+    font-weight: normal
+    font-size: 2.5rem
+    color: #000
+    opacity: 0.7
+  &__stripe
+    background: #000
+    width: 114px
+    height: 1px
+    margin: 33px auto 0 auto
+    opacity: 0.7
+.phone
+  text-align: center
+  &__wrapper
+    text-align: center
+    margin: 47px 0 0 6px
+    height: 30px
+  &__img
+    display: inline-block
+    height: 30px
+    margin: 0 0 0 0
+  &__number
+    display: inline-block
+    vertical-align: top
+    margin: 0 0 0 11px
+    font-size: 1.3rem
+    color: #000
+    line-height: 30px
+    opacity: 0.7
+  &__comment
+    margin: 34px 0 0 0
+    font-size: 1.1875rem
+    font-weight: normal
+    letter-spacing: 0.4px
+    opacity: 0.7
+.landing-icons
+  text-align: center
+  margin-top: 39px
+  padding: 0
+  position: relative
+  font-family: openSansRegular
+  &__item
+    display: inline-block
+    text-align: center
+    margin-right: 33px
+    &_no-margin
+      margin-right: 0
+  &__img-wrapper
+    display: flex
+    height: 75px
+    text-align: center
+    width: 100%
+    flex-direction: column
+    align-items: center
+    justify-content: center
+  &__arrow-container
+    display: inline-block
+    width: 12px
+    height: 20px
+    text-align: left
+  &__arrow
+    display: inline-block
+    position: absolute
+    top: 35%
+    width: 8px
+  &__img-done
+    width: 66px
+    vertical-align: middle
+  &__img-mail
+    width: 65px
+  &__img-box
+    width: 54px
+  &__text
+    font-family: openSansRegular
+    font-size: 1rem
+    color: #000
+    opacity: 0.7
