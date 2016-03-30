@@ -5,6 +5,7 @@ $(document).ready(function() {
 	scrollPage();
 	resizeLanding();
 	showExtraPlatforms();
+	initValidation();
 });
 
 function resizeLanding() {
@@ -244,6 +245,28 @@ function sliderCommentary() {
 			$prevBtn.removeClass("comments__arrow-non-active");
 		}
 	}
+}
+
+function initValidation() {
+	var validator = new FormValidator('contact_form', [
+		{
+			name: 'name',
+			display: 'Имя',
+			rules: 'required'
+		},
+		{
+			name: 'phone',
+			display: 'Телефон',
+			rules: 'required'
+		},
+		{
+			name: 'email',
+			display: 'Email',
+			rules: 'required'
+		}
+	], function(errors) {
+		alert('Поле "' + errors[0].display + '" не заполнено');
+	});
 }
 
 function scrollPage() {
