@@ -438,9 +438,9 @@
     text-align: left; }
 
 .extra-trading-platforms {
+  display: inline-block;
   text-align: center;
   position: relative;
-  display: none;
   margin-top: 10px; }
 
 .left-column {
@@ -513,7 +513,10 @@
     font-size: 0.825rem;
     text-align: left; }
 
-.extra-trading-platforms_visible {
+.extra-trading-platforms_invisible {
+  display: none; }
+
+.extra-trading-platforms_initial {
   display: inline-block;
   overflow: hidden;
   height: 1px; }
@@ -537,7 +540,7 @@
     font-size: 1.5rem;
     text-align: center; }
   .footer__contact-wrapper {
-    width: 750px;
+    width: 815px;
     margin: 36px auto 0 auto; }
   .footer__contact-social-wrapper {
     display: inline-block;
@@ -578,7 +581,7 @@
     margin: 0 0 0 8px;
     line-height: 25px;
     vertical-align: top;
-    text-decoration: underline; }
+    text-decoration: none; }
   .footer__social-buttons {
     margin-top: 30px; }
   .footer__social-item {
