@@ -118,7 +118,7 @@ function createElementSlider() {
 function showExtraPlatforms() {
 	var $moreButton = $('.js-trading-platforms__button-item');
 	var $extraTradingPlatforms = $('.js-extra-trading-platforms');
-	var $extraTradingPlatformsHeight = 720;	//hardcoded, because at load it's in display: none
+	var $extraTradingPlatformsHeight = 740;	//hardcoded, because at load it's in display: none
 	$moreButton.on('click', function () {
 		if(!$extraTradingPlatforms.hasClass('extra-trading-platforms_visible')) {
 			$extraTradingPlatforms.addClass('extra-trading-platforms_visible');
