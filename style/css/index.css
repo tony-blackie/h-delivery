@@ -454,13 +454,15 @@
 .extra-trading-platforms {
   text-align: center;
   position: relative;
-  display: none; }
+  display: none;
+  margin-top: 10px; }
 
 .left-column {
   display: inline-block;
   width: 250px;
   vertical-align: top;
-  padding: 0 3px 0 170px; }
+  padding: 0 3px 0 170px;
+  margin-top: 12px; }
   .left-column__icon-list-item {
     display: block;
     width: 100%;
@@ -469,10 +471,14 @@
   .left-column__img {
     display: inline-block;
     width: 120px; }
-    .left-column__img_victorias-secret {
-      width: 200px; }
-    .left-column__img_asos {
-      width: 80px; }
+    .left-column__img_forever21 {
+      width: 126px; }
+    .left-column__img_wow {
+      width: 154px; }
+    .left-column__img_gap {
+      width: 46px; }
+    .left-column__img_sweetwater {
+      width: 136px; }
   .left-column__text-wrapper {
     display: block;
     width: 100%;
@@ -500,10 +506,14 @@
   .right-column__img {
     display: inline-block;
     width: 120px; }
-    .right-column__img_victorias-secret {
-      width: 200px; }
-    .right-column__img_asos {
+    .right-column__img_wallmart {
+      width: 146px; }
+    .right-column__img_chicco {
       width: 80px; }
+    .right-column__img_zappos {
+      width: 84px; }
+    .right-column__img_house {
+      width: 104px; }
   .right-column__text-wrapper {
     display: block;
     width: 100%;
