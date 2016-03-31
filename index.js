@@ -269,8 +269,17 @@ function initValidation() {
 			display: 'Email',
 			rules: 'required'
 		}
-	], function(errors) {
-		alert('Поле "' + errors[0].display + '" не заполнено');
+	], function(errors, event) {
+		var errorElement = $('.js-contact-form__error');
+		if(errorElement.hasClass('contact-form__error_visible')) {
+			errorElement
+				.html('Поле "' + errors[0].display + '" не заполнено');
+		}  else {
+			errorElement
+				.addClass('contact-form__error_visible')
+				.html('Поле "' + errors[0].display + '" не заполнено');
+		}
+
 	});
 }
 
