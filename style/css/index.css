@@ -607,7 +607,7 @@
     top: -36px;
     display: none;
     height: 29px;
-    width: 470px;
+    width: 477px;
     text-align: center;
     border: 1px solid #000;
     border-radius: 3px 3px;
@@ -615,7 +615,6 @@
     line-height: 31px;
     text-decoration: none;
     color: #000;
-    padding-left: 7px;
     background-color: #ff898c; }
     .contact-form__error_visible {
       display: block; }
