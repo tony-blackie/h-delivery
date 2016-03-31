@@ -119,8 +119,13 @@ function createElementSlider() {
 function showExtraPlatforms() {
 	var $moreButton = $('.js-trading-platforms__button-item');
 	var $extraTradingPlatforms = $('.js-extra-trading-platforms');
-	var extraTradingPlatformsHeight = $extraTradingPlatforms.height();
-	var buttonHeightWithMargins = 100;
+	var extraTradingPlatformsHeight;
+	if ($(window).width() > 1500) {
+		extraTradingPlatformsHeight = 780;
+	} else {
+		extraTradingPlatformsHeight = 600;
+	}
+	// var buttonHeightWithMargins = 50;
 	$extraTradingPlatforms.addClass('extra-trading-platforms_invisible');
 	$moreButton.on('click', function () {
 		if($extraTradingPlatforms.hasClass('extra-trading-platforms_invisible')) {
@@ -129,7 +134,7 @@ function showExtraPlatforms() {
 				.removeClass('extra-trading-platforms_invisible')
 				.animate(
 				{
-					height: extraTradingPlatformsHeight + buttonHeightWithMargins
+					height: extraTradingPlatformsHeight
 				}, 500);
 		} else {
 			$extraTradingPlatforms
