@@ -5,8 +5,24 @@ $(document).ready(function() {
 	scrollPage();
 	resizeLanding();
 	showExtraPlatforms();
+	//addValidationListener();
+	addFormSubmitEventListener();
 	initValidation();
 });
+
+function addFormSubmitEventListener() {
+	var form = $('.contact-form');
+	form.on('submit', function(event) {
+		event.preventDefault();
+	})
+}
+
+function addValidationListener() {
+	var submitForm = $('.contact-form__submit');
+	submitForm.on('click', function() {
+		initValidation();
+	});
+}
 
 function resizeLanding() {
 	$(window).on('resize', function() {
@@ -265,16 +281,20 @@ function displayErrorMessage(errors, event) {
 }
 
 function saveFormData() {
-	var name = $('.contact-form__name');
-	var phone = $('.contact-form__phone');
-	var email = $('.contact-form__email');
-	var message = $('.contact-form__message-textarea');
-	var formData = name + ' \n' + phone + ' \n' + email + ' \n' + message;
+	var name = $('.contact-form__name').val();
+	var phone = $('.contact-form__phone').val();
+	var email = $('.contact-form__email').val();
+	var message = $('.contact-form__message-textarea').val();
 
 	$.ajax({
 		url: 'send_form_email.php',
-		type: 'post',
-		formData: formData
+		type: 'POST',
+		data: {
+			name: name,
+			phone: phone,
+			email: email,
+			message: message
+		}
 	});
 }
 
@@ -296,7 +316,7 @@ function initValidation() {
 			rules: 'required'
 		}
 	], function(errors, event) {
-		displayErrorMessage(errors, event);
+		//displayErrorMessage(errors, event);
 		saveFormData();
 	});
 }
