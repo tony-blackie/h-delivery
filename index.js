@@ -252,6 +252,32 @@ function sliderCommentary() {
 	}
 }
 
+function displayErrorMessage(errors, event) {
+	var errorElement = $('.js-contact-form__error');
+	if(errorElement.hasClass('contact-form__error_visible')) {
+		errorElement
+			.html('Поле "' + errors[0].display + '" не заполнено');
+	}  else {
+		errorElement
+			.addClass('contact-form__error_visible')
+			.html('Поле "' + errors[0].display + '" не заполнено');
+	}
+}
+
+function saveFormData() {
+	var name = $('.contact-form__name');
+	var phone = $('.contact-form__phone');
+	var email = $('.contact-form__email');
+	var message = $('.contact-form__message-textarea');
+	var formData = name + ' \n' + phone + ' \n' + email + ' \n' + message;
+
+	$.ajax({
+		url: 'send_form_email.php',
+		type: 'post',
+		formData: formData
+	});
+}
+
 function initValidation() {
 	var validator = new FormValidator('contact_form', [
 		{
@@ -270,16 +296,8 @@ function initValidation() {
 			rules: 'required'
 		}
 	], function(errors, event) {
-		var errorElement = $('.js-contact-form__error');
-		if(errorElement.hasClass('contact-form__error_visible')) {
-			errorElement
-				.html('Поле "' + errors[0].display + '" не заполнено');
-		}  else {
-			errorElement
-				.addClass('contact-form__error_visible')
-				.html('Поле "' + errors[0].display + '" не заполнено');
-		}
-
+		displayErrorMessage(errors, event);
+		saveFormData();
 	});
 }
 
