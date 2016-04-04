@@ -270,6 +270,16 @@ function sliderCommentary() {
 
 function displayErrorMessage(errors, event) {
 	var errorElement = $('.js-contact-form__error');
+	if(errors.length === 0) {
+		errorElement
+			.addClass('contact-form__success')
+			.html('Письмо успешно отправлено!');
+		setTimeout(function() {
+			var errorElement = $('.js-contact-form__error');
+			errorElement.fadeOut(500);
+		}, 2000);
+		return true;
+	}
 	if(errorElement.hasClass('contact-form__error_visible')) {
 		errorElement
 			.html('Поле "' + errors[0].display + '" не заполнено');
@@ -316,8 +326,10 @@ function initValidation() {
 			rules: 'required'
 		}
 	], function(errors, event) {
-		displayErrorMessage(errors, event);
-		saveFormData();
+		var isFormDataCorrect = displayErrorMessage(errors, event);
+		if(isFormDataCorrect) {
+			saveFormData();
+		}
 	});
 }
 
