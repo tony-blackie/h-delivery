@@ -79,7 +79,8 @@
     padding: 0; }
   .nav__menu-item {
     display: inline-block;
-    margin: 0 27px 0 0; }
+    margin: 0 27px 0 0;
+    line-height: 32px; }
     .nav__menu-item:hover {
       line-height: 32px;
       border-top: 2px solid #2ca9c9; }
@@ -87,11 +88,11 @@
       margin-right: 0; }
   .nav__menu-item_active {
     line-height: 32px;
-    border-top: 2px solid #2ca9c9; }
+    border-top: 2px solid #2ca9c9;
+    box-sizing: border-box; }
   .nav__menu-item-link {
     text-decoration: none;
-    color: #000; }
-  .nav .nav__menu-item-link:hover {
+    color: #000;
     cursor: pointer; }
 
 .landing-text {
