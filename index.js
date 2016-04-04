@@ -42,7 +42,7 @@ function initLandingHeight() {
 	var landingHeaderHeight = $('.header').height();
 	var landingTextPadding = parseInt($('.title').css('padding-top'), 10);
 	var landingHeight = windowHeight > (landingTextHeight + landingHeaderHeight + landingTextPadding) ?
-			windowHeight : (landingTextHeight + landingHeaderHeight + landingTextPadding);
+		windowHeight : (landingTextHeight + landingHeaderHeight + landingTextPadding);
 	if(landingHeight < 670) {
 		landingHeight = 670;
 	}
@@ -53,34 +53,34 @@ function initLandingHeight() {
 function generateCarouselButtons(isThreeElementGallery, galleryLength) {
 	var $carouselButtonWrapper = $('.about-us__carousel-buttons');
 	var
-			i,
-			documentFragment = document.createDocumentFragment(),
-			item;
+		i,
+		documentFragment = document.createDocumentFragment(),
+		item;
 	if(isThreeElementGallery) {
 		galleryLength = Math.floor( galleryLength / 3 ) - 1; // -1 cause we create first element separately
 	}
 	item = $('<div></div>' ).addClass('about-us__carousel-buttons-item');
 	for (i = 0; i < galleryLength; i++) {
 		item.clone()
-				.addClass('about-us__carousel-buttons-item' + (i + 1))
-				.appendTo(documentFragment);
+			.addClass('about-us__carousel-buttons-item' + (i + 1))
+			.appendTo(documentFragment);
 	}
 	item.addClass('about-us__carousel-buttons-item0 about-us__carousel-buttons-item_active' )
-			.prependTo(documentFragment);
+		.prependTo(documentFragment);
 
 	$(documentFragment).appendTo($carouselButtonWrapper);
 }
 
 function createElementSlider() {
 	var $srcImg = $(".about-us__img"),
-			$textUnderImg = $(".about-us__text"),
-			$containerForImg = $(".about-us__icon-list"),
-			documFragment = $('<div></div>'),
-			allSrcImg = [],
-			allTextUnderImg = [], i,
-			allElementsForSlider = [],
-			isThreeElementGallery,
-			windowWidth = $(window).width();
+		$textUnderImg = $(".about-us__text"),
+		$containerForImg = $(".about-us__icon-list"),
+		documFragment = $('<div></div>'),
+		allSrcImg = [],
+		allTextUnderImg = [], i,
+		allElementsForSlider = [],
+		isThreeElementGallery,
+		windowWidth = $(window).width();
 	var documFragFromArray;
 
 	isThreeElementGallery = true;
@@ -99,8 +99,8 @@ function createElementSlider() {
 
 	for (i = 0; i < allSrcImg.length; i++) {
 		var figureElement = $('<figure></figure>'),
-				imgElement = $('<img>'),
-				textElement = $('<p></p>');
+			imgElement = $('<img>'),
+			textElement = $('<p></p>');
 
 		figureElement.addClass("about-us__icon-list-item");
 		imgElement.addClass("about-us__img");
@@ -169,10 +169,10 @@ function showExtraPlatforms() {
 
 function slider() {
 	var arrValue = createElementSlider(),
-			$containerForImg = $(".about-us__icon-list"),
-			timer,
-			timeForTimerMs = 3800,
-			valueNumberSliderItem = 0;
+		$containerForImg = $(".about-us__icon-list"),
+		timer,
+		timeForTimerMs = 3800,
+		valueNumberSliderItem = 0;
 
 	$containerForImg.append(arrValue[0]);
 	timer = setInterval(moveElements, timeForTimerMs);
@@ -181,30 +181,30 @@ function slider() {
 	function moveElements() {
 		$containerForImg.children().remove();
 		$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
-				.removeClass("about-us__carousel-buttons-item_active");
+			.removeClass("about-us__carousel-buttons-item_active");
 		if (valueNumberSliderItem == arrValue.length - 1) {
 			valueNumberSliderItem = -1;
 		}
 		valueNumberSliderItem++;
 		$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
-				.addClass("about-us__carousel-buttons-item_active");
+			.addClass("about-us__carousel-buttons-item_active");
 		$containerForImg.append(arrValue[valueNumberSliderItem]);
 	}
 
 	function movedItem(event) {
 		var className = event.target.getAttribute("class"),
-				numberImage;
+			numberImage;
 		if (className.length > 65) {
 			return;
 		}
 		clearInterval(timer);
 		$containerForImg.children().remove();
 		$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
-				.removeClass("about-us__carousel-buttons-item_active");
+			.removeClass("about-us__carousel-buttons-item_active");
 		numberImage = className.substring(63);
 		valueNumberSliderItem = numberImage;
 		$(".about-us__carousel-buttons-item" + valueNumberSliderItem)
-				.addClass("about-us__carousel-buttons-item_active");
+			.addClass("about-us__carousel-buttons-item_active");
 		$containerForImg.append(arrValue[valueNumberSliderItem]);
 		timer = setInterval(moveElements, timeForTimerMs);
 	}
@@ -316,21 +316,21 @@ function initValidation() {
 			rules: 'required'
 		}
 	], function(errors, event) {
-		//displayErrorMessage(errors, event);
+		displayErrorMessage(errors, event);
 		saveFormData();
 	});
 }
 
 function scrollPage() {
 	var $aboutBtn = $(".nav__menu-item-about"),
-			$landingButton = $(".landing__button"),
-			$aboutBlock = $(".about-us"),
-			$commentsBtn = $(".nav__menu-item-comments"),
-			$commentsBlock = $(".comments"),
-			$tradingPlatformsBtn = $(".nav__menu-item-trading-platforms"),
-			$tradingPlatformsBlock = $(".trading-platforms"),
-			$contactsBtn = $(".nav__menu-item-contacts"),
-			$contactsBlock = $(".footer");
+		$landingButton = $(".landing__button"),
+		$aboutBlock = $(".about-us"),
+		$commentsBtn = $(".nav__menu-item-comments"),
+		$commentsBlock = $(".comments"),
+		$tradingPlatformsBtn = $(".nav__menu-item-trading-platforms"),
+		$tradingPlatformsBlock = $(".trading-platforms"),
+		$contactsBtn = $(".nav__menu-item-contacts"),
+		$contactsBlock = $(".footer");
 
 	$aboutBtn.click(function() {
 		var extraMargin = 5;

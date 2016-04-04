@@ -29,7 +29,7 @@
     border: 1px solid #333333;
     border-radius: 3px 3px;
     text-align: center;
-    margin-top: 33px;
+    margin-top: 10px;
     font-size: 0.8125rem;
     line-height: 31px;
     text-decoration: none;
@@ -102,8 +102,7 @@
   font-family: openSansRegular;
   text-align: center; }
   .title__header {
-    margin-top: 58px;
-    margin-left: 0.41754%;
+    margin: 24px 0 24px 0.41754%;
     text-align: center;
     font-family: openSansRegular;
     font-weight: normal;
@@ -113,13 +112,13 @@
     background: #000;
     width: 114px;
     height: 1px;
-    margin: 33px auto 0 auto; }
+    margin: 18px auto 0 auto; }
 
 .phone {
   text-align: center; }
   .phone__wrapper {
     text-align: center;
-    margin: 47px 0 0 6px;
+    margin: 20px 0 0 6px;
     height: 30px; }
   .phone__img {
     display: inline-block;
@@ -136,11 +135,24 @@
     margin: 34px 0 0 0;
     font-size: 1.1875rem;
     font-weight: normal;
-    letter-spacing: 0.4px; }
+    letter-spacing: 0.4px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; }
+    .phone__comment_first-part {
+      width: 700px;
+      display: flex;
+      order: 1; }
+    .phone__comment_second-part {
+      width: 700px;
+      display: flex;
+      order: 2;
+      margin-top: 35px; }
 
 .landing-icons {
   text-align: center;
-  margin-top: 39px;
+  margin-top: 10px;
   padding: 0;
   position: relative;
   font-family: openSansRegular; }
@@ -712,7 +724,21 @@
     font-size: 1.3rem; }
 
   .about-us__text {
-    min-height: 185px; } }
+    min-height: 185px; }
+
+  .landing__button-item {
+    margin-top: 33px; }
+
+  .phone__wrapper {
+    margin: 47px 0 0 6px; }
+
+  .landing-icons {
+    margin-top: 39px; }
+
+  .title__header {
+    margin: 58px 0 24px 0.41754%; }
+  .title__stripe {
+    margin: 33px auto 0 auto; } }
 /* Tablet */
 
 /*# sourceMappingURL=index.css.map */

@@ -23,7 +23,7 @@
     border: 1px solid #333333
     border-radius: 3px 3px
     text-align: center
-    margin-top: 33px
+    margin-top: 10px  //33px for 1500+
     font-size: 0.8125rem
     line-height: 31px
     text-decoration: none
@@ -96,8 +96,7 @@
   font-family: openSansRegular
   text-align: center
   &__header
-    margin-top: 58px
-    margin-left: 0.417536534447%
+    margin: 24px 0 24px 0.417536534447%  // 58px for 1500+
     text-align: center
     font-family: openSansRegular
     font-weight: normal
@@ -107,12 +106,12 @@
     background: #000
     width: 114px
     height: 1px
-    margin: 33px auto 0 auto
+    margin: 18px auto 0 auto // 33px for 1500+
 .phone
   text-align: center
   &__wrapper
     text-align: center
-    margin: 47px 0 0 6px
+    margin: 20px 0 0 6px  //47px for 1500+
     height: 30px
   &__img
     display: inline-block
@@ -130,9 +129,23 @@
     font-size: 1.1875rem
     font-weight: normal
     letter-spacing: 0.4px
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    &_first-part
+      width: 700px
+      display: flex
+      order: 1
+    &_second-part
+      width: 700px
+      display: flex
+      order: 2
+      margin-top: 35px
+
 .landing-icons
   text-align: center
-  margin-top: 39px
+  margin-top: 10px  //39px for 1500+
   padding: 0
   position: relative
   font-family: openSansRegular
