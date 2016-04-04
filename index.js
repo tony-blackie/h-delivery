@@ -5,7 +5,6 @@ $(document).ready(function() {
 	scrollPage();
 	resizeLanding();
 	showExtraPlatforms();
-	//addValidationListener();
 	addFormSubmitEventListener();
 	initValidation();
 });
@@ -268,15 +267,31 @@ function sliderCommentary() {
 	}
 }
 
+function clearFormInputs() {
+	$('.js-contact-form__name').val('');
+	$('.js-contact-form__phone').val('');
+	$('.js-contact-form__email').val('');
+	$('.js-contact-form__message-textarea').val('');
+}
+
 function displayErrorMessage(errors, event) {
+	var username,
+		phone,
+		email;
 	var errorElement = $('.js-contact-form__error');
 	if(errors.length === 0) {
+		clearFormInputs();
 		errorElement
 			.addClass('contact-form__success')
 			.html('Письмо успешно отправлено!');
 		setTimeout(function() {
 			var errorElement = $('.js-contact-form__error');
 			errorElement.fadeOut(500);
+		}, 1500);
+		setTimeout(function() {
+			errorElement
+				.removeClass('contact-form__error_visible')
+				.removeClass('contact-form__success');
 		}, 2000);
 		return true;
 	}
@@ -285,6 +300,7 @@ function displayErrorMessage(errors, event) {
 			.html('Поле "' + errors[0].display + '" не заполнено');
 	}  else {
 		errorElement
+			.fadeIn(1)
 			.addClass('contact-form__error_visible')
 			.html('Поле "' + errors[0].display + '" не заполнено');
 	}
