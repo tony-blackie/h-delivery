@@ -280,7 +280,6 @@ function displayErrorMessage(errors, event) {
 		email;
 	var errorElement = $('.js-contact-form__error');
 	if(errors.length === 0) {
-		clearFormInputs();
 		errorElement
 			.addClass('contact-form__success')
 			.html('Письмо успешно отправлено!');
@@ -345,6 +344,7 @@ function initValidation() {
 		var isFormDataCorrect = displayErrorMessage(errors, event);
 		if(isFormDataCorrect) {
 			saveFormData();
+			clearFormInputs();
 		}
 	});
 }
