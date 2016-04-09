@@ -11,7 +11,7 @@ $message = $_POST['message'];
 
 $form_data = $name . "\r\n" . $phone . "\r\n" . $email . "\r\n" . $message;
 
-$to = "jim.casey321@gmail.com";
+$to = "hedgehogs.delivery@gmail.com";
 $email_subject = "New customer mail!";
 
 $headers = "From: $name \r\n";
